@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/home/app/app
+      - ./package.json:/home/app/package.json
+      - ./yarn.lock:/home/app/yarn.lock
+    ports:
+      - 10001:10001
+    command:
+      - /bin/sh
+      - -c
+      - "npm run compile -- --watch & npm run serve -- -p 10001"

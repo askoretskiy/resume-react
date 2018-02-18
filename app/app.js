@@ -30,7 +30,7 @@ const Application = () => (
         <Technologies/>
         <Projects/>
         <Timeline/>
-        <footer>
+        <footer className="gray">
             &copy; {new Date().getFullYear()} Artem Skoretskiy
         </footer>
     </main>
@@ -38,7 +38,7 @@ const Application = () => (
 
 
 const Services = () => (
-    <section className="services">
+    <section className="profile_column1">
         <h2 className="highlight">Full-stack web developer</h2>
         <ul>
             <li>Backend</li>
@@ -65,7 +65,7 @@ const Photo = () => (
 
 
 const Profile = () => (
-    <section className="profile">
+    <section className="profile_column1">
         <h2>Profile</h2>
         <ul>
             <li>{get_years_since(new Date(2000, 9, 1, 12))} years as software developer</li>
@@ -79,10 +79,10 @@ const Profile = () => (
 
 
 const Contacts = () => (
-    <ul className="contacts">
+    <ul className="no-list">
         <li>+49 (0)157 835 40 848</li>
         <li>artem.skoretskiy@gmail.com</li>
-        <li><span className="contact_type">skype</span> tonn81</li>
+        <li><span className="gray colon-after">skype</span> tonn81</li>
     </ul>
 );
 
@@ -91,7 +91,7 @@ const Technologies = () => (
     <section>
         <h2>Stack</h2>
         <div className="tags-grouped">
-            <div className="tag-group">Front-end</div>
+            <div className="column1-2 tag-group colon-after">Front-end</div>
                 <ul className="tags">
                     <li>Javascript</li>
                     <li>ES8</li>
@@ -105,7 +105,7 @@ const Technologies = () => (
                     <li>CSS</li>
                     <li>HTML5</li>
                 </ul>
-            <div className="tag-group">Backend</div>
+            <div className="column1-2 tag-group colon-after">Backend</div>
                 <ul className="tags">
                     <li>Python 3</li>
                     <li>Django</li>
@@ -117,7 +117,7 @@ const Technologies = () => (
                     <li>PostgreSQL</li>
                     <li>Redis</li>
                 </ul>
-            <div className="tag-group">Cloud</div>
+            <div className="column1-2 tag-group colon-after">Cloud</div>
                 <ul className="tags">
                     <li>AWS S3</li>
                     <li>AWS S3 uploader</li>
@@ -127,7 +127,7 @@ const Technologies = () => (
                     <li>AWS CloudFront</li>
                     <li>AWS Glacier</li>
                 </ul>
-            <div className="tag-group">DevOps</div>
+            <div className="column1-2 tag-group colon-after">DevOps</div>
                 <ul className="tags">
                     <li>BASH</li>
                     <li>Docker</li>
@@ -141,7 +141,7 @@ const Technologies = () => (
                     <li>Alpine</li>
                     <li>compilation</li>
                 </ul>
-            <div className="tag-group">Video</div>
+            <div className="column1-2 tag-group colon-after">Video</div>
                 <ul className="tags">
                     <li>ffmpeg</li>
                     <li>HTML5 video</li>
@@ -149,7 +149,7 @@ const Technologies = () => (
                     <li>DASH</li>
                     <li>RTMP</li>
                 </ul>
-            <div className="tag-group">More</div>
+            <div className="column1-2 tag-group colon-after">More</div>
                 <ul className="tags">
                     <li>MacOS</li>
                     <li>PyCharm</li>

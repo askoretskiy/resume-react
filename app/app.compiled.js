@@ -39,7 +39,7 @@ const Application = () => React.createElement(
     React.createElement(Timeline, null),
     React.createElement(
         "footer",
-        null,
+        { className: "gray" },
         "\xA9 ",
         new Date().getFullYear(),
         " Artem Skoretskiy"
@@ -48,7 +48,7 @@ const Application = () => React.createElement(
 
 const Services = () => React.createElement(
     "section",
-    { className: "services" },
+    { className: "profile_column1" },
     React.createElement(
         "h2",
         { className: "highlight" },
@@ -113,7 +113,7 @@ const Photo = () => React.createElement(
 
 const Profile = () => React.createElement(
     "section",
-    { className: "profile" },
+    { className: "profile_column1" },
     React.createElement(
         "h2",
         null,
@@ -163,7 +163,7 @@ const Profile = () => React.createElement(
 
 const Contacts = () => React.createElement(
     "ul",
-    { className: "contacts" },
+    { className: "no-list" },
     React.createElement(
         "li",
         null,
@@ -179,7 +179,7 @@ const Contacts = () => React.createElement(
         null,
         React.createElement(
             "span",
-            { className: "contact_type" },
+            { className: "gray colon-after" },
             "skype"
         ),
         " tonn81"
@@ -199,7 +199,7 @@ const Technologies = () => React.createElement(
         { className: "tags-grouped" },
         React.createElement(
             "div",
-            { className: "tag-group" },
+            { className: "column1-2 tag-group colon-after" },
             "Front-end"
         ),
         React.createElement(
@@ -263,7 +263,7 @@ const Technologies = () => React.createElement(
         ),
         React.createElement(
             "div",
-            { className: "tag-group" },
+            { className: "column1-2 tag-group colon-after" },
             "Backend"
         ),
         React.createElement(
@@ -317,7 +317,7 @@ const Technologies = () => React.createElement(
         ),
         React.createElement(
             "div",
-            { className: "tag-group" },
+            { className: "column1-2 tag-group colon-after" },
             "Cloud"
         ),
         React.createElement(
@@ -361,7 +361,7 @@ const Technologies = () => React.createElement(
         ),
         React.createElement(
             "div",
-            { className: "tag-group" },
+            { className: "column1-2 tag-group colon-after" },
             "DevOps"
         ),
         React.createElement(
@@ -425,7 +425,7 @@ const Technologies = () => React.createElement(
         ),
         React.createElement(
             "div",
-            { className: "tag-group" },
+            { className: "column1-2 tag-group colon-after" },
             "Video"
         ),
         React.createElement(
@@ -459,7 +459,7 @@ const Technologies = () => React.createElement(
         ),
         React.createElement(
             "div",
-            { className: "tag-group" },
+            { className: "column1-2 tag-group colon-after" },
             "More"
         ),
         React.createElement(

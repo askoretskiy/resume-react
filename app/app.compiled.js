@@ -282,6 +282,16 @@ const Technologies = () => React.createElement(
             React.createElement(
                 "li",
                 null,
+                "Django i18n"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Celery"
+            ),
+            React.createElement(
+                "li",
+                null,
                 "JSON REST API"
             ),
             React.createElement(
@@ -313,6 +323,11 @@ const Technologies = () => React.createElement(
                 "li",
                 null,
                 "Redis"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "RabbitMQ"
             )
         ),
         React.createElement(
@@ -346,7 +361,7 @@ const Technologies = () => React.createElement(
             React.createElement(
                 "li",
                 null,
-                "packer"
+                "Packer"
             ),
             React.createElement(
                 "li",
@@ -488,12 +503,577 @@ const Projects = () => React.createElement(
         "Projects"
     ),
     React.createElement(
-        "ul",
-        null,
+        "article",
+        { className: "project" },
         React.createElement(
-            "li",
+            "h3",
             null,
-            "TODO"
+            "CORE"
+        ),
+        React.createElement(
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Javascript"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "React"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Redux"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Webpack"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Babel"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Python 3"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django REST Framework"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "PostgreSQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Redis"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "nginx"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "uWSGI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Gitlab CI"
+            )
+        ),
+        React.createElement(
+            "p",
+            null,
+            "Web application for company's internal processes (billing, time logging, availability, drinks, etc) automation. More"
+        )
+    ),
+    React.createElement(
+        "article",
+        { className: "project" },
+        React.createElement(
+            "h3",
+            null,
+            "Workflow management system"
+        ),
+        React.createElement(
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Python 3"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "ViewFlow"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "PostgreSQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Redis"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "nginx"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "uWSGI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Gitlab CI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "BPMN"
+            )
+        ),
+        React.createElement(
+            "p",
+            null,
+            "Web application for company's workflows (processes) automation. [More]"
+        )
+    ),
+    React.createElement(
+        "article",
+        { className: "project" },
+        React.createElement(
+            "h3",
+            null,
+            "PicturePipe Encoder"
+        ),
+        React.createElement(
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Python"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Celery"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "RabbitMQ"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "ffmpeg"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "mp4Box"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Debian"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "BASH"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "AWS CLI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "wget"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "curl"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "compilation"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "EC2"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "EC2 custom AMI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Packer"
+            )
+        ),
+        React.createElement(
+            "p",
+            null,
+            "Application that transcodes user video into requested format for PicturePipe. [More]"
+        ),
+        React.createElement(
+            "ul",
+            null,
+            React.createElement(
+                "li",
+                null,
+                "2018: Integrate proprietary HEVC (h265) encoder"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "2018: Benchmark EC2 instance types"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "2017: Archive source to AWS Glacier"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "2017: Generate Apple HLS assets"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "2017: Generate MPEG DASH assets"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "???: Download source file by URL (including password)"
+            )
+        )
+    ),
+    React.createElement(
+        "article",
+        { className: "project" },
+        React.createElement(
+            "h3",
+            null,
+            "PicturePipe"
+        ),
+        React.createElement(
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Python"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Tastypie"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Guardian"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "MySQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "memcached"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "tox"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "nginx"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "uWSGI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Selenium"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Gitlab CI"
+            )
+        ),
+        React.createElement(
+            "p",
+            null,
+            "Web platform for receiving, storing and playing videos and its metadata. [More]"
+        ),
+        React.createElement(
+            "ul",
+            null,
+            React.createElement(
+                "li",
+                null,
+                "2017: Play Apple HLS assets"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "2017: Play MPEG DASH assets"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "2017: Place secure overlay on HTML5 video"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "???: Prepare web kiosks based on Linux"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "???: Scale number of EC2 instance for PicturePipe Encoder according to load"
+            )
+        )
+    ),
+    React.createElement(
+        "article",
+        { className: "project" },
+        React.createElement(
+            "h3",
+            null,
+            "DblExplorer"
+        ),
+        React.createElement(
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Python"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "PostgreSQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Redis"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "nginx"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "uWSGI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Gitlab CI"
+            )
+        ),
+        React.createElement(
+            "p",
+            null,
+            "Online catalog for electric machines. [More]"
+        )
+    ),
+    React.createElement(
+        "article",
+        { className: "project" },
+        React.createElement(
+            "h3",
+            null,
+            "PCP Termincontrolling"
+        ),
+        React.createElement(
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Python 3"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "PostgreSQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Redis"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "nginx"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "uWSGI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Gitlab CI"
+            )
+        ),
+        React.createElement(
+            "p",
+            null,
+            "Web application for company's workflows (processes) automation. [More]"
+        )
+    ),
+    React.createElement(
+        "article",
+        { className: "project" },
+        React.createElement(
+            "h3",
+            null,
+            "Prequel"
+        ),
+        React.createElement(
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Python"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "MySQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "memcached"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Redis"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "tox"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "nginx"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "uWSGI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Gitlab CI"
+            )
+        ),
+        React.createElement(
+            "p",
+            null,
+            "Web-based videotheque that used PicturePipe as backend. [More]"
         )
     )
 );
@@ -506,15 +1086,7 @@ const Timeline = () => React.createElement(
         null,
         "Timeline"
     ),
-    React.createElement(
-        "ul",
-        null,
-        React.createElement(
-            "li",
-            null,
-            "TODO"
-        )
-    )
+    "TODO"
 );
 
 document.addEventListener('DOMContentLoaded', () => {

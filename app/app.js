@@ -19,22 +19,46 @@ const get_full_years = (start, end) => {
 };
 
 
-const Application = () => (
-    <main>
-        <header>
-            <h1>Artem Skoretskiy, {get_years_since(new Date(1981, 12, 7, 12))}</h1>
-        </header>
-        <Photo/>
-        <Services/>
-        <Profile/>
-        <Technologies/>
-        <Projects/>
-        <Timeline/>
-        <footer className="gray">
-            &copy; {new Date().getFullYear()} Artem Skoretskiy
-        </footer>
-    </main>
-);
+const toggle_set = (set, value) => {
+    let new_set = new Set(set);
+    if (!new_set.delete(value)) {
+        new_set.add(value);
+    }
+    return new_set;
+};
+
+
+class Application extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            expanded: new Set(),
+        };
+    }
+
+    toggle(slug) {
+        this.setState(prevState => ({expanded: toggle_set(prevState.expanded, slug)}));
+    }
+
+    render() {
+        return (
+            <main>
+                <header>
+                    <h1>Artem Skoretskiy, {get_years_since(new Date(1981, 12, 7, 12))}</h1>
+                </header>
+                <Photo/>
+                <Services/>
+                <Profile/>
+                <Technologies/>
+                <Projects toggle={this.toggle.bind(this)} expanded={this.state.expanded}/>
+                <Timeline/>
+                <footer className="gray">
+                    &copy; {new Date().getFullYear()} Artem Skoretskiy
+                </footer>
+            </main>
+        );
+    }
+}
 
 
 const Services = () => (
@@ -162,7 +186,7 @@ const Technologies = () => (
 );
 
 
-const Projects = () => (
+const Projects = ({toggle, expanded}) => (
     <section>
         <h2>Projects</h2>
 
@@ -224,15 +248,20 @@ const Projects = () => (
                 <li>EC2 custom AMI</li>
                 <li>Packer</li>
             </ul>
-            <p>Application that transcodes user video into requested format for PicturePipe. [More]</p>
-            <ul>
-                <li>2018: Integrate proprietary HEVC (h265) encoder</li>
-                <li>2018: Benchmark EC2 instance types</li>
-                <li>2017: Archive source to AWS Glacier</li>
-                <li>2017: Generate Apple HLS assets</li>
-                <li>2017: Generate MPEG DASH assets</li>
-                <li>???: Download source file by URL (including password)</li>
-            </ul>
+            <p>Application that transcodes user video into requested format for PicturePipe.
+                <ToggleLink slug="pp-encoder-features" toggle={toggle} expanded={expanded}/>
+            </p>
+
+            {!expanded.has('pp-encoder-features') ? null : (
+                <ul>
+                    <li>2018: Integrate proprietary HEVC (h265) encoder</li>
+                    <li>2018: Benchmark EC2 instance types</li>
+                    <li>2017: Archive source to AWS Glacier</li>
+                    <li>2017: Generate Apple HLS assets</li>
+                    <li>2017: Generate MPEG DASH assets</li>
+                    <li>???: Download source file by URL (including password)</li>
+                </ul>
+            )}
         </article>
 
         <article className="project">
@@ -317,6 +346,16 @@ const Timeline = () => (
         TODO
     </section>
 );
+
+const ToggleLink = ({toggle, expanded, slug}) => {
+    let slug_expanded = expanded.has(slug);
+    return (
+        <a href="#" className={`toggle ${slug_expanded ? 'less' : 'more'}`} onClick={e => {
+            toggle(slug);
+            e.preventDefault();
+        }}>{slug_expanded ? 'Less' : 'More'}</a>
+    )
+};
 
 
 document.addEventListener('DOMContentLoaded', () => {

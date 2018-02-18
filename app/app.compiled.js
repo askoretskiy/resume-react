@@ -18,33 +18,56 @@ const get_full_years = (start, end) => {
     }
 };
 
-const Application = () => React.createElement(
-    "main",
-    null,
-    React.createElement(
-        "header",
-        null,
-        React.createElement(
-            "h1",
+const toggle_set = (set, value) => {
+    let new_set = new Set(set);
+    if (!new_set.delete(value)) {
+        new_set.add(value);
+    }
+    return new_set;
+};
+
+class Application extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            expanded: new Set()
+        };
+    }
+
+    toggle(slug) {
+        this.setState(prevState => ({ expanded: toggle_set(prevState.expanded, slug) }));
+    }
+
+    render() {
+        return React.createElement(
+            "main",
             null,
-            "Artem Skoretskiy, ",
-            get_years_since(new Date(1981, 12, 7, 12))
-        )
-    ),
-    React.createElement(Photo, null),
-    React.createElement(Services, null),
-    React.createElement(Profile, null),
-    React.createElement(Technologies, null),
-    React.createElement(Projects, null),
-    React.createElement(Timeline, null),
-    React.createElement(
-        "footer",
-        { className: "gray" },
-        "\xA9 ",
-        new Date().getFullYear(),
-        " Artem Skoretskiy"
-    )
-);
+            React.createElement(
+                "header",
+                null,
+                React.createElement(
+                    "h1",
+                    null,
+                    "Artem Skoretskiy, ",
+                    get_years_since(new Date(1981, 12, 7, 12))
+                )
+            ),
+            React.createElement(Photo, null),
+            React.createElement(Services, null),
+            React.createElement(Profile, null),
+            React.createElement(Technologies, null),
+            React.createElement(Projects, { toggle: this.toggle.bind(this), expanded: this.state.expanded }),
+            React.createElement(Timeline, null),
+            React.createElement(
+                "footer",
+                { className: "gray" },
+                "\xA9 ",
+                new Date().getFullYear(),
+                " Artem Skoretskiy"
+            )
+        );
+    }
+}
 
 const Services = () => React.createElement(
     "section",
@@ -494,7 +517,7 @@ const Technologies = () => React.createElement(
     )
 );
 
-const Projects = () => React.createElement(
+const Projects = ({ toggle, expanded }) => React.createElement(
     "section",
     null,
     React.createElement(
@@ -748,9 +771,10 @@ const Projects = () => React.createElement(
         React.createElement(
             "p",
             null,
-            "Application that transcodes user video into requested format for PicturePipe. [More]"
+            "Application that transcodes user video into requested format for PicturePipe.",
+            React.createElement(ToggleLink, { slug: "pp-encoder-features", toggle: toggle, expanded: expanded })
         ),
-        React.createElement(
+        !expanded.has('pp-encoder-features') ? null : React.createElement(
             "ul",
             null,
             React.createElement(
@@ -1088,6 +1112,18 @@ const Timeline = () => React.createElement(
     ),
     "TODO"
 );
+
+const ToggleLink = ({ toggle, expanded, slug }) => {
+    let slug_expanded = expanded.has(slug);
+    return React.createElement(
+        "a",
+        { href: "#", className: `toggle ${slug_expanded ? 'less' : 'more'}`, onClick: e => {
+                toggle(slug);
+                e.preventDefault();
+            } },
+        slug_expanded ? 'Less' : 'More'
+    );
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(React.createElement(Application, null), document.getElementById('root'));

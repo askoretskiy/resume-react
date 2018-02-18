@@ -104,3 +104,55 @@ ul.contacts {
 h1 {
     margin-bottom: 0.5em;
 }
+
+.services ul {
+    margin: 0.5rem 0;
+}
+
+ul.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul.tags li {
+    display: inline-flex;
+    list-style-type: none;
+    padding: 0.2em 0.5em;
+    background-color: aliceblue;
+}
+
+ul.tags li:first-child, ul.tags li + li {
+    margin: 0.25em 0.5em 0 0;
+}
+
+div.tags-grouped {
+    display: grid;
+    grid-template-columns: 6em 1fr;
+    grid-template-rows: auto;
+    margin: 0 0 0.5em 0;
+}
+
+div.tags-grouped .tag-group {
+    grid-column: 1/2;
+    padding: 0.2em 0;
+    margin-top: 0.25em;
+}
+
+div.tags-grouped ul.tags {
+    grid-column: 2/3;
+    padding: 0;
+    margin: 0;
+}
+
+.tag-group::after {
+    content: ':';
+}
+
+footer {
+    font-size: 0.75rem;
+    color: #AAAAAA;
+}
+
+span.gray {
+    color: #AAAAAA;
+}

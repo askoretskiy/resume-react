@@ -27,13 +27,14 @@ const Application = () => React.createElement(
         React.createElement(
             "h1",
             null,
-            "Artem Skoretskiy"
+            "Artem Skoretskiy, ",
+            get_years_since(new Date(1981, 12, 7, 12))
         )
     ),
     React.createElement(Photo, null),
     React.createElement(Services, null),
     React.createElement(Profile, null),
-    React.createElement(Skills, null),
+    React.createElement(Technologies, null),
     React.createElement(Projects, null),
     React.createElement(Timeline, null),
     React.createElement(
@@ -124,19 +125,18 @@ const Profile = () => React.createElement(
         React.createElement(
             "li",
             null,
-            get_years_since(new Date(1981, 12, 7, 12)),
-            " years"
-        ),
-        React.createElement(
-            "li",
-            null,
             get_years_since(new Date(2000, 9, 1, 12)),
             " years as software developer"
         ),
         React.createElement(
             "li",
             null,
-            "Live in K\xF6ln"
+            "Live in K\xF6ln ",
+            React.createElement(
+                "span",
+                { className: "gray" },
+                "(Niederlassungserlaubnis)"
+            )
         ),
         React.createElement(
             "li",
@@ -146,12 +146,17 @@ const Profile = () => React.createElement(
         React.createElement(
             "li",
             null,
-            "Fluent English"
+            "Intermediate German ",
+            React.createElement(
+                "span",
+                { className: "gray" },
+                "(B2.1)"
+            )
         ),
         React.createElement(
             "li",
             null,
-            "Intermediate German (B2.1)"
+            "Fluent English"
         )
     )
 );
@@ -181,196 +186,295 @@ const Contacts = () => React.createElement(
     )
 );
 
-const Skills = () => React.createElement(
+const Technologies = () => React.createElement(
     "section",
     null,
     React.createElement(
         "h2",
         null,
-        "Skills"
+        "Stack"
     ),
     React.createElement(
-        "ul",
-        null,
+        "div",
+        { className: "tags-grouped" },
         React.createElement(
-            "li",
-            null,
-            "Python 3"
+            "div",
+            { className: "tag-group" },
+            "Front-end"
         ),
         React.createElement(
-            "li",
-            null,
-            "Django"
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Javascript"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "ES8"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "React"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "JSX"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Redux"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Webpack 3"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Babel"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "yarn"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "React hot-reload"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "CSS"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "HTML5"
+            )
         ),
         React.createElement(
-            "li",
-            null,
-            "Django REST framework"
+            "div",
+            { className: "tag-group" },
+            "Backend"
         ),
         React.createElement(
-            "li",
-            null,
-            "JSON REST API"
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "Python 3"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "JSON REST API"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Django REST framework"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "SQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "MySQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "SQLite"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "PostgreSQL"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Redis"
+            )
         ),
         React.createElement(
-            "li",
-            null,
-            "Javascript"
+            "div",
+            { className: "tag-group" },
+            "Cloud"
         ),
         React.createElement(
-            "li",
-            null,
-            "ES8"
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "AWS S3"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "AWS S3 uploader"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "AWS EC2"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "AWS custom EMI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "packer"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "AWS CloudFront"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "AWS Glacier"
+            )
         ),
         React.createElement(
-            "li",
-            null,
-            "React"
+            "div",
+            { className: "tag-group" },
+            "DevOps"
         ),
         React.createElement(
-            "li",
-            null,
-            "Redux"
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "BASH"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker for Mac"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Docker Compose"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "GitLab CI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "nginx"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "uWSGI"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Linux"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Debian"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Alpine"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "compilation"
+            )
         ),
         React.createElement(
-            "li",
-            null,
-            "Webpack 3"
+            "div",
+            { className: "tag-group" },
+            "Video"
         ),
         React.createElement(
-            "li",
-            null,
-            "Babel"
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "ffmpeg"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "HTML5 video"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "HLS"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "DASH"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "RTMP"
+            )
         ),
         React.createElement(
-            "li",
-            null,
-            "React hot-reload"
+            "div",
+            { className: "tag-group" },
+            "More"
         ),
         React.createElement(
-            "li",
-            null,
-            "CSS"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "HTML5"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "SQL"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "MySQL"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "SQLite"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "PostgreSQL"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "BASH"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "AWS S3 (+ upload)"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "AWS EC2 (+ custom AMIs)"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "packer"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "AWS CloudFront"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "AWS Glacier"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "ffmpeg"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "HTML5 video"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "HLS"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "DASH"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "Docker"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "Docker for Mac"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "Docker Compose"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "GitLab CI"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "Linux"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "Debian"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "Alpine"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "MacOS"
-        ),
-        React.createElement(
-            "li",
-            null,
-            "PyCharm"
+            "ul",
+            { className: "tags" },
+            React.createElement(
+                "li",
+                null,
+                "MacOS"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "PyCharm"
+            )
         )
     )
 );

@@ -22,12 +22,12 @@ const get_full_years = (start, end) => {
 const Application = () => (
     <main>
         <header>
-            <h1>Artem Skoretskiy</h1>
+            <h1>Artem Skoretskiy, {get_years_since(new Date(1981, 12, 7, 12))}</h1>
         </header>
         <Photo/>
         <Services/>
         <Profile/>
-        <Skills/>
+        <Technologies/>
         <Projects/>
         <Timeline/>
         <footer>
@@ -68,12 +68,11 @@ const Profile = () => (
     <section className="profile">
         <h2>Profile</h2>
         <ul>
-            <li>{get_years_since(new Date(1981, 12, 7, 12))} years</li>
             <li>{get_years_since(new Date(2000, 9, 1, 12))} years as software developer</li>
-            <li>Live in Köln</li>
+            <li>Live in Köln <span className="gray">(Niederlassungserlaubnis)</span></li>
             <li>Master of Economy</li>
+            <li>Intermediate German <span className="gray">(B2.1)</span></li>
             <li>Fluent English</li>
-            <li>Intermediate German (B2.1)</li>
         </ul>
     </section>
 );
@@ -88,47 +87,74 @@ const Contacts = () => (
 );
 
 
-const Skills = () => (
+const Technologies = () => (
     <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Python 3</li>
-            <li>Django</li>
-            <li>Django REST framework</li>
-            <li>JSON REST API</li>
-            <li>Javascript</li>
-            <li>ES8</li>
-            <li>React</li>
-            <li>Redux</li>
-            <li>Webpack 3</li>
-            <li>Babel</li>
-            <li>React hot-reload</li>
-            <li>CSS</li>
-            <li>HTML5</li>
-            <li>SQL</li>
-            <li>MySQL</li>
-            <li>SQLite</li>
-            <li>PostgreSQL</li>
-            <li>BASH</li>
-            <li>AWS S3 (+ upload)</li>
-            <li>AWS EC2 (+ custom AMIs)</li>
-            <li>packer</li>
-            <li>AWS CloudFront</li>
-            <li>AWS Glacier</li>
-            <li>ffmpeg</li>
-            <li>HTML5 video</li>
-            <li>HLS</li>
-            <li>DASH</li>
-            <li>Docker</li>
-            <li>Docker for Mac</li>
-            <li>Docker Compose</li>
-            <li>GitLab CI</li>
-            <li>Linux</li>
-            <li>Debian</li>
-            <li>Alpine</li>
-            <li>MacOS</li>
-            <li>PyCharm</li>
-        </ul>
+        <h2>Stack</h2>
+        <div className="tags-grouped">
+            <div className="tag-group">Front-end</div>
+                <ul className="tags">
+                    <li>Javascript</li>
+                    <li>ES8</li>
+                    <li>React</li>
+                    <li>JSX</li>
+                    <li>Redux</li>
+                    <li>Webpack 3</li>
+                    <li>Babel</li>
+                    <li>yarn</li>
+                    <li>React hot-reload</li>
+                    <li>CSS</li>
+                    <li>HTML5</li>
+                </ul>
+            <div className="tag-group">Backend</div>
+                <ul className="tags">
+                    <li>Python 3</li>
+                    <li>Django</li>
+                    <li>JSON REST API</li>
+                    <li>Django REST framework</li>
+                    <li>SQL</li>
+                    <li>MySQL</li>
+                    <li>SQLite</li>
+                    <li>PostgreSQL</li>
+                    <li>Redis</li>
+                </ul>
+            <div className="tag-group">Cloud</div>
+                <ul className="tags">
+                    <li>AWS S3</li>
+                    <li>AWS S3 uploader</li>
+                    <li>AWS EC2</li>
+                    <li>AWS custom EMI</li>
+                    <li>packer</li>
+                    <li>AWS CloudFront</li>
+                    <li>AWS Glacier</li>
+                </ul>
+            <div className="tag-group">DevOps</div>
+                <ul className="tags">
+                    <li>BASH</li>
+                    <li>Docker</li>
+                    <li>Docker for Mac</li>
+                    <li>Docker Compose</li>
+                    <li>GitLab CI</li>
+                    <li>nginx</li>
+                    <li>uWSGI</li>
+                    <li>Linux</li>
+                    <li>Debian</li>
+                    <li>Alpine</li>
+                    <li>compilation</li>
+                </ul>
+            <div className="tag-group">Video</div>
+                <ul className="tags">
+                    <li>ffmpeg</li>
+                    <li>HTML5 video</li>
+                    <li>HLS</li>
+                    <li>DASH</li>
+                    <li>RTMP</li>
+                </ul>
+            <div className="tag-group">More</div>
+                <ul className="tags">
+                    <li>MacOS</li>
+                    <li>PyCharm</li>
+                </ul>
+        </div>
     </section>
 );
 

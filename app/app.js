@@ -21,21 +21,25 @@ const get_full_years = (start, end) => {
 
 const Application = () => (
     <main>
-        <h1>Artem Skoretskiy <span className="dense">//</span>
-            <span className="highlight">full-stack web developer</span></h1>
-        <Photo />
+        <header>
+            <h1>Artem Skoretskiy</h1>
+        </header>
+        <Photo/>
         <Services/>
-        <Contacts />
         <Profile/>
         <Skills/>
         <Projects/>
         <Timeline/>
+        <footer>
+            &copy; {new Date().getFullYear()} Artem Skoretskiy
+        </footer>
     </main>
 );
 
 
 const Services = () => (
-    <section>
+    <section className="services">
+        <h2 className="highlight">Full-stack web developer</h2>
         <ul>
             <li>Backend</li>
             <li>Frontend</li>
@@ -54,13 +58,14 @@ const Services = () => (
 
 const Photo = () => (
     <section className="photo">
-        <img src="profile.jpg" className="photo" />
+        <img src="profile.jpg" className="photo"/>
+        <Contacts/>
     </section>
 );
 
 
 const Profile = () => (
-    <section>
+    <section className="profile">
         <h2>Profile</h2>
         <ul>
             <li>{get_years_since(new Date(1981, 12, 7, 12))} years</li>
@@ -75,14 +80,11 @@ const Profile = () => (
 
 
 const Contacts = () => (
-    <section>
-        <h2>Contacts</h2>
-        <ul>
-            <li><span className="contact_type">phone</span> +49 (0)157 835 40 848</li>
-            <li><span className="contact_type">email</span> artem.skoretskiy@gmail.com</li>
-            <li><span className="contact_type">skype</span> tonn81</li>
-        </ul>
-    </section>
+    <ul className="contacts">
+        <li>+49 (0)157 835 40 848</li>
+        <li>artem.skoretskiy@gmail.com</li>
+        <li><span className="contact_type">skype</span> tonn81</li>
+    </ul>
 );
 
 

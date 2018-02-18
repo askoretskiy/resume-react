@@ -23,8 +23,6 @@ h3 {
 }
 
 body {
-    padding: 1rem 2rem;
-    width: 800px;
 }
 
 .dense {
@@ -35,6 +33,7 @@ body {
 .highlight {
     background-color: #a8ff99;
     padding: 0 0.5ch;
+    display: inline-block;
 }
 
 .contact_type {
@@ -49,5 +48,59 @@ section.photo {
 }
 
 img.photo {
-    max-height: 200px;
+    max-height: 300px;
+}
+
+body {
+    padding: 1rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 0 1fr 245px 1rem;
+    grid-template-rows: auto;
+}
+
+section, header, footer {
+    /*
+    border: solid 1px red;
+    */
+}
+
+header {
+    grid-column: 1/5;
+}
+
+section.photo {
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+
+section.profile {
+    grid-row: 3/4;
+}
+
+section.services, section.profile {
+    grid-column: 2/3;
+}
+
+section {
+    grid-column: 2/4;
+}
+
+footer {
+    grid-column: 2/5;
+}
+
+ul.contacts {
+    margin: 0;
+    padding: 0 1.5em;
+}
+
+ul.contacts {
+    list-style-type: none;
+}
+
+h1 {
+    margin-bottom: 0.5em;
 }

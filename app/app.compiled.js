@@ -22,32 +22,37 @@ const Application = () => React.createElement(
     "main",
     null,
     React.createElement(
-        "h1",
+        "header",
         null,
-        "Artem Skoretskiy ",
         React.createElement(
-            "span",
-            { className: "dense" },
-            "//"
-        ),
-        React.createElement(
-            "span",
-            { className: "highlight" },
-            "full-stack web developer"
+            "h1",
+            null,
+            "Artem Skoretskiy"
         )
     ),
     React.createElement(Photo, null),
     React.createElement(Services, null),
-    React.createElement(Contacts, null),
     React.createElement(Profile, null),
     React.createElement(Skills, null),
     React.createElement(Projects, null),
-    React.createElement(Timeline, null)
+    React.createElement(Timeline, null),
+    React.createElement(
+        "footer",
+        null,
+        "\xA9 ",
+        new Date().getFullYear(),
+        " Artem Skoretskiy"
+    )
 );
 
 const Services = () => React.createElement(
     "section",
-    null,
+    { className: "services" },
+    React.createElement(
+        "h2",
+        { className: "highlight" },
+        "Full-stack web developer"
+    ),
     React.createElement(
         "ul",
         null,
@@ -101,12 +106,13 @@ const Services = () => React.createElement(
 const Photo = () => React.createElement(
     "section",
     { className: "photo" },
-    React.createElement("img", { src: "profile.jpg", className: "photo" })
+    React.createElement("img", { src: "profile.jpg", className: "photo" }),
+    React.createElement(Contacts, null)
 );
 
 const Profile = () => React.createElement(
     "section",
-    null,
+    { className: "profile" },
     React.createElement(
         "h2",
         null,
@@ -151,46 +157,27 @@ const Profile = () => React.createElement(
 );
 
 const Contacts = () => React.createElement(
-    "section",
-    null,
+    "ul",
+    { className: "contacts" },
     React.createElement(
-        "h2",
+        "li",
         null,
-        "Contacts"
+        "+49 (0)157 835 40 848"
     ),
     React.createElement(
-        "ul",
+        "li",
+        null,
+        "artem.skoretskiy@gmail.com"
+    ),
+    React.createElement(
+        "li",
         null,
         React.createElement(
-            "li",
-            null,
-            React.createElement(
-                "span",
-                { className: "contact_type" },
-                "phone"
-            ),
-            " +49 (0)157 835 40 848"
+            "span",
+            { className: "contact_type" },
+            "skype"
         ),
-        React.createElement(
-            "li",
-            null,
-            React.createElement(
-                "span",
-                { className: "contact_type" },
-                "email"
-            ),
-            " artem.skoretskiy@gmail.com"
-        ),
-        React.createElement(
-            "li",
-            null,
-            React.createElement(
-                "span",
-                { className: "contact_type" },
-                "skype"
-            ),
-            " tonn81"
-        )
+        " tonn81"
     )
 );
 

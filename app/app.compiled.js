@@ -30,15 +30,15 @@ const Application = () => React.createElement(
             { className: "dense" },
             "//"
         ),
-        " ",
         React.createElement(
             "span",
             { className: "highlight" },
             "full-stack web developer"
         )
     ),
+    React.createElement(Photo, null),
     React.createElement(Services, null),
-    React.createElement(OtherServices, null),
+    React.createElement(Contacts, null),
     React.createElement(Profile, null),
     React.createElement(Skills, null),
     React.createElement(Projects, null),
@@ -71,12 +71,7 @@ const Services = () => React.createElement(
             null,
             "DevOps"
         )
-    )
-);
-
-const OtherServices = () => React.createElement(
-    "section",
-    null,
+    ),
     React.createElement(
         "h3",
         null,
@@ -101,6 +96,12 @@ const OtherServices = () => React.createElement(
             "Business analyst"
         )
     )
+);
+
+const Photo = () => React.createElement(
+    "section",
+    { className: "photo" },
+    React.createElement("img", { src: "profile.jpg", className: "photo" })
 );
 
 const Profile = () => React.createElement(
@@ -145,6 +146,50 @@ const Profile = () => React.createElement(
             "li",
             null,
             "Intermediate German (B2.1)"
+        )
+    )
+);
+
+const Contacts = () => React.createElement(
+    "section",
+    null,
+    React.createElement(
+        "h2",
+        null,
+        "Contacts"
+    ),
+    React.createElement(
+        "ul",
+        null,
+        React.createElement(
+            "li",
+            null,
+            React.createElement(
+                "span",
+                { className: "contact_type" },
+                "phone"
+            ),
+            " +49 (0)157 835 40 848"
+        ),
+        React.createElement(
+            "li",
+            null,
+            React.createElement(
+                "span",
+                { className: "contact_type" },
+                "email"
+            ),
+            " artem.skoretskiy@gmail.com"
+        ),
+        React.createElement(
+            "li",
+            null,
+            React.createElement(
+                "span",
+                { className: "contact_type" },
+                "skype"
+            ),
+            " tonn81"
         )
     )
 );

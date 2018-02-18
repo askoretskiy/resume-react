@@ -24,6 +24,7 @@ h3 {
 
 body {
     padding: 1rem 2rem;
+    width: 800px;
 }
 
 .dense {
@@ -34,4 +35,19 @@ body {
 .highlight {
     background-color: #a8ff99;
     padding: 0 0.5ch;
+}
+
+.contact_type {
+    color: #AAA;
+}
+
+.contact_type::after {
+    content: ':';
+}
+
+section.photo {
+}
+
+img.photo {
+    max-height: 200px;
 }

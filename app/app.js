@@ -21,9 +21,11 @@ const get_full_years = (start, end) => {
 
 const Application = () => (
     <main>
-        <h1>Artem Skoretskiy <span className="dense">//</span> <span className="highlight">full-stack web developer</span></h1>
+        <h1>Artem Skoretskiy <span className="dense">//</span>
+            <span className="highlight">full-stack web developer</span></h1>
+        <Photo />
         <Services/>
-        <OtherServices/>
+        <Contacts />
         <Profile/>
         <Skills/>
         <Projects/>
@@ -40,18 +42,19 @@ const Services = () => (
             <li>Cloud services integration</li>
             <li>DevOps</li>
         </ul>
-    </section>
-);
-
-
-const OtherServices = () => (
-    <section>
         <h3>More when needed</h3>
         <ul>
             <li>Technical lead</li>
             <li>Project manager</li>
             <li>Business analyst</li>
         </ul>
+    </section>
+);
+
+
+const Photo = () => (
+    <section className="photo">
+        <img src="profile.jpg" className="photo" />
     </section>
 );
 
@@ -66,6 +69,18 @@ const Profile = () => (
             <li>Master of Economy</li>
             <li>Fluent English</li>
             <li>Intermediate German (B2.1)</li>
+        </ul>
+    </section>
+);
+
+
+const Contacts = () => (
+    <section>
+        <h2>Contacts</h2>
+        <ul>
+            <li><span className="contact_type">phone</span> +49 (0)157 835 40 848</li>
+            <li><span className="contact_type">email</span> artem.skoretskiy@gmail.com</li>
+            <li><span className="contact_type">skype</span> tonn81</li>
         </ul>
     </section>
 );

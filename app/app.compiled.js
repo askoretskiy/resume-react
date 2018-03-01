@@ -49,15 +49,15 @@ class Application extends React.Component {
                     "h1",
                     null,
                     "Artem Skoretskiy, ",
-                    get_years_since(new Date(1981, 12, 7, 12))
+                    get_years_since(BIRTH_DAY)
                 )
             ),
             React.createElement(Photo, null),
             React.createElement(Services, null),
             React.createElement(Profile, null),
             React.createElement(Technologies, null),
-            React.createElement(Projects, { toggle: this.toggle.bind(this), expanded: this.state.expanded }),
             React.createElement(Timeline, null),
+            React.createElement(Projects, { toggle: this.toggle.bind(this), expanded: this.state.expanded }),
             React.createElement(
                 "footer",
                 { className: "gray" },
@@ -134,6 +134,9 @@ const Photo = () => React.createElement(
     React.createElement(Contacts, null)
 );
 
+const BIRTH_DAY = new Date(1981, 12, 7, 12);
+const FIRST_JOB_DAY = new Date(2000, 9, 1, 12);
+
 const Profile = () => React.createElement(
     "section",
     { className: "profile_column1" },
@@ -148,7 +151,7 @@ const Profile = () => React.createElement(
         React.createElement(
             "li",
             null,
-            get_years_since(new Date(2000, 9, 1, 12)),
+            get_years_since(FIRST_JOB_DAY),
             " years as software developer"
         ),
         React.createElement(
@@ -512,10 +515,51 @@ const Technologies = () => React.createElement(
                 "li",
                 null,
                 "PyCharm"
+            ),
+            React.createElement(
+                "li",
+                null,
+                "Ubuntu"
             )
         )
     )
 );
+
+const PROJECTS = {
+    pp: 'PicturePipe',
+    pq: 'Prequel',
+    pp_enc: 'PicturePipe Encoder',
+    pp_client: 'PicturePipe Client PC',
+    core: 'CORE',
+    dbl: 'DblExplorer',
+    pcp: 'PCP Termincontrolling',
+    wms: 'Workflow Management System',
+    salt: 'Salt and Pepper',
+    buro: 'Büroverhaltung',
+    opera: 'Opera Leipzig',
+    connector: 'gSales Connector',
+    archive: 'Web Apps Archive',
+    starmeo: 'Starmeo',
+    syndicate: 'Syndicate',
+    deindeal: 'DeinDeal',
+    twangoo: 'Twangoo',
+    cmj: 'CMJ',
+    immersioncast: 'ImmersionCast',
+    polls: 'Pollpigeon',
+    ichat: 'iChat',
+    cursecounter: 'Curse Counter',
+    techdrifters: 'TechDrifters',
+    trivia: 'Trivia',
+    swix: 'SWIX',
+    service_merchant: 'Service Merchant',
+    credit_reports: 'Credit Reports',
+    planner: 'Planner',
+    webminer: 'Webminer',
+    cas: 'CAS',
+    modeus: 'ModEUS',
+    tm: 'TAU-Master',
+    accounting: 'Online Accounting Course'
+};
 
 const Projects = ({ toggle, expanded }) => React.createElement(
     "section",
@@ -1102,16 +1146,31 @@ const Projects = ({ toggle, expanded }) => React.createElement(
     )
 );
 
-const Timeline = () => React.createElement(
-    "section",
-    null,
-    React.createElement(
-        "h2",
+const Timeline = () => {
+    let years = [];
+    const first_year = FIRST_JOB_DAY.getFullYear();
+    for (let year = new Date().getFullYear(); year >= first_year; year--) {
+        years.push(year);
+    }
+    return React.createElement(
+        "section",
         null,
-        "Timeline"
-    ),
-    "TODO"
-);
+        React.createElement(
+            "h2",
+            null,
+            "Timeline"
+        ),
+        React.createElement(
+            "ul",
+            { className: "tags" },
+            years.map(year => React.createElement(
+                "li",
+                null,
+                year
+            ))
+        )
+    );
+};
 
 const ToggleLink = ({ toggle, expanded, slug }) => {
     let slug_expanded = expanded.has(slug);

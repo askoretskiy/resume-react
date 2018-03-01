@@ -44,14 +44,14 @@ class Application extends React.Component {
         return (
             <main>
                 <header>
-                    <h1>Artem Skoretskiy, {get_years_since(new Date(1981, 12, 7, 12))}</h1>
+                    <h1>Artem Skoretskiy, {get_years_since(BIRTH_DAY)}</h1>
                 </header>
                 <Photo/>
                 <Services/>
                 <Profile/>
                 <Technologies/>
-                <Projects toggle={this.toggle.bind(this)} expanded={this.state.expanded}/>
                 <Timeline/>
+                <Projects toggle={this.toggle.bind(this)} expanded={this.state.expanded}/>
                 <footer className="gray">
                     &copy; {new Date().getFullYear()} Artem Skoretskiy
                 </footer>
@@ -87,12 +87,15 @@ const Photo = () => (
     </section>
 );
 
+const BIRTH_DAY = new Date(1981, 12, 7, 12);
+const FIRST_JOB_DAY = new Date(2000, 9, 1, 12);
+
 
 const Profile = () => (
     <section className="profile_column1">
         <h2>Profile</h2>
         <ul>
-            <li>{get_years_since(new Date(2000, 9, 1, 12))} years as software developer</li>
+            <li>{get_years_since(FIRST_JOB_DAY)} years as software developer</li>
             <li>Live in Köln <span className="gray">(Niederlassungserlaubnis)</span></li>
             <li>Master of Economy</li>
             <li>Intermediate German <span className="gray">(B2.1)</span></li>
@@ -180,10 +183,48 @@ const Technologies = () => (
             <ul className="tags">
                 <li>MacOS</li>
                 <li>PyCharm</li>
+                <li>Ubuntu</li>
             </ul>
         </div>
     </section>
 );
+
+
+const PROJECTS = {
+    pp: 'PicturePipe',
+    pq: 'Prequel',
+    pp_enc: 'PicturePipe Encoder',
+    pp_client: 'PicturePipe Client PC',
+    core: 'CORE',
+    dbl: 'DblExplorer',
+    pcp: 'PCP Termincontrolling',
+    wms: 'Workflow Management System',
+    salt: 'Salt and Pepper',
+    buro: 'Büroverhaltung',
+    opera: 'Opera Leipzig',
+    connector: 'gSales Connector',
+    archive: 'Web Apps Archive',
+    starmeo: 'Starmeo',
+    syndicate: 'Syndicate',
+    deindeal: 'DeinDeal',
+    twangoo: 'Twangoo',
+    cmj: 'CMJ',
+    immersioncast: 'ImmersionCast',
+    polls: 'Pollpigeon',
+    ichat: 'iChat',
+    cursecounter: 'Curse Counter',
+    techdrifters: 'TechDrifters',
+    trivia: 'Trivia',
+    swix: 'SWIX',
+    service_merchant: 'Service Merchant',
+    credit_reports: 'Credit Reports',
+    planner: 'Planner',
+    webminer: 'Webminer',
+    cas: 'CAS',
+    modeus: 'ModEUS',
+    tm: 'TAU-Master',
+    accounting: 'Online Accounting Course',
+};
 
 
 const Projects = ({toggle, expanded}) => (
@@ -340,12 +381,23 @@ const Projects = ({toggle, expanded}) => (
 );
 
 
-const Timeline = () => (
-    <section>
-        <h2>Timeline</h2>
-        TODO
-    </section>
-);
+const Timeline = () => {
+    let years= [];
+    const first_year = FIRST_JOB_DAY.getFullYear();
+    for(let year=new Date().getFullYear();year >= first_year; year--) {
+        years.push(year);
+    }
+    return(
+        <section>
+            <h2>Timeline</h2>
+            <ul className="tags">
+                {years.map(year => (
+                    <li>{year}</li>
+                ))}
+            </ul>
+        </section>
+    );
+};
 
 const ToggleLink = ({toggle, expanded, slug}) => {
     let slug_expanded = expanded.has(slug);

@@ -1,5 +1,8 @@
 'use strict';
 
+const BIRTH_DAY = new Date(1981, 12, 7, 12);
+const FIRST_JOB_DAY = new Date(2000, 9, 1, 12);
+
 const get_years_since = date => get_full_years(date, new Date());
 
 const get_full_years = (start, end) => {
@@ -87,15 +90,13 @@ const Photo = () => (
     </section>
 );
 
-const BIRTH_DAY = new Date(1981, 12, 7, 12);
-const FIRST_JOB_DAY = new Date(2000, 9, 1, 12);
 
 
 const Profile = () => (
     <section className="profile_column1">
         <h2>Profile</h2>
         <ul>
-            <li>{get_years_since(FIRST_JOB_DAY)} years as software developer</li>
+            <li>{get_years_since(FIRST_JOB_DAY)} years as [paid] software developer</li>
             <li>Live in Köln <span className="gray">(Niederlassungserlaubnis)</span></li>
             <li>Master of Economy</li>
             <li>Intermediate German <span className="gray">(B2.1)</span></li>
@@ -190,41 +191,221 @@ const Technologies = () => (
 );
 
 
-const PROJECTS = {
-    pp: 'PicturePipe',
-    pq: 'Prequel',
-    pp_enc: 'PicturePipe Encoder',
-    pp_client: 'PicturePipe Client PC',
-    core: 'CORE',
-    dbl: 'DblExplorer',
-    pcp: 'PCP Termincontrolling',
-    wms: 'Workflow Management System',
-    salt: 'Salt and Pepper',
-    buro: 'Büroverhaltung',
-    opera: 'Opera Leipzig',
-    connector: 'gSales Connector',
-    archive: 'Web Apps Archive',
-    starmeo: 'Starmeo',
-    syndicate: 'Syndicate',
-    deindeal: 'DeinDeal',
-    twangoo: 'Twangoo',
-    cmj: 'CMJ',
-    immersioncast: 'ImmersionCast',
-    polls: 'Pollpigeon',
-    ichat: 'iChat',
-    cursecounter: 'Curse Counter',
-    techdrifters: 'TechDrifters',
-    trivia: 'Trivia',
-    swix: 'SWIX',
-    service_merchant: 'Service Merchant',
-    credit_reports: 'Credit Reports',
-    planner: 'Planner',
-    webminer: 'Webminer',
-    cas: 'CAS',
-    modeus: 'ModEUS',
-    tm: 'TAU-Master',
-    accounting: 'Online Accounting Course',
-};
+const PROJECTS = [
+    {
+        name: 'PicturePipe Client PC',
+        years: {
+
+        },
+    },
+    {
+        name: 'CORE',
+        years: {
+
+        },
+    },
+    {
+        name: 'DblExplorer',
+        years: {
+
+        },
+    },
+    {
+        name: 'PCP Termincontrolling',
+        years: {
+
+        },
+    },
+    {
+        name: 'Workflow Management System',
+        years: {
+
+        },
+    },
+    {
+        name: 'Salt and Pepper',
+        years: {
+
+        },
+    },
+    {
+        name: 'Opera Leipzig',
+        years: {
+
+        },
+    },
+    {
+        name: 'Web Apps Archive',
+        years: {
+
+        },
+    },
+    {
+        name: 'Prequel',
+        years: {
+            2017: '',
+            2016: '',
+            2015: '',
+            2014: '',
+            2013: '',
+        }
+    },
+    {
+        name: 'PicturePipe Encoder',
+        years: {
+            2018: '',
+            2017: '',
+            2016: '',
+            2015: '',
+            2014: '',
+            2013: '',
+            2012: '',
+        },
+    },
+    {
+        name: 'PicturePipe',
+        years: {
+            2018: 'Web app, Django, Python, Tastypie, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2017: 'Web app, Django, Python, Tastypie, Django REST Framework, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2016: 'Web app, Django, Python, Tastypie, Django REST Framework, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2015: 'Web app, Django, Python, Tastypie, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2014: 'Web app, Django, Python, Tastypie, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
+            2013: 'Web app, Django, Python, Tastypie, Piston, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
+            2012: 'Web app, Django, Python, Tastypie, Piston, Django REST Framework, Guardian, Flash, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
+        },
+    },
+    {
+        name: 'Starmeo',
+        years: {
+            2012: 'Web app, Django, Python, Javascript, Celery, RabbitMQ, AWS, AWS S3, RDBMS, SQL, Fabric, ffmpeg, MySQL, Linux, Ubuntu',
+            2011: 'Web app, Django, Python, Javascript, Celery, RabbitMQ, AWS, AWS S3, RDBMS, SQL, Fabric, ffmpeg, MySQL, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'Syndicate',
+        years: {
+            2011: 'Web app, Thick client, Javascript, NodeJS, NoSQL, CouchDB, Django, Python, RDBMS, SQL, MySQL, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'DeinDeal',
+        years: {
+            2011: 'Web app, Django, Python, Celery, RabbitMQ, Fabric, RDBMS, SQL, MySQL, Linux, Ubuntu',
+            2010: 'Web app, Django, Python, Celery, RabbitMQ, Fabric, RDBMS, SQL, MySQL, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'Twangoo',
+        years: {
+            2010: 'Web app, Django, Python, Celery, RabbitMQ, memcached, Fabric, uWSGI, nginx, YAML, RDBMS, SQL, MySQL, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'CMJ',
+        years: {
+            2010: 'Web app, Ruby on Rails, Ruby, MySQL, Sybase, Solr, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'ImmersionCast',
+        years: {
+            2010: 'Web app, Ruby on Rails, Ruby, Flash, RDBMS, SQL, MySQL, nginx, ffmpeg, Linux, Ubuntu',
+            2009: 'Web app, Ruby on Rails, Ruby, Flash, RDBMS, SQL, MySQL, nginx, ffmpeg, Linux, Ubuntu',
+        },
+        features: 'VoD platform, files storage, video processing, video playout + pseudo-streaming, authorized download acceleration',
+    },
+    {
+        name: 'Pollpigeon',
+        years: {
+            2009: 'Web app, Django, Python, Javascript, RDBMS, SQL, MySQL, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'iChat',
+        years: {
+            2009: 'Web app, Thick client, Javascript, Python, HTTP, HTML5, HTML, CSS, XMPP, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'Curse Counter',
+        years: {
+            2009: 'Web app, Ruby on Rails, Ruby, Javascript, RDBMS, SQL, MySQL, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'TechDrifters',
+        years: {
+            2009: 'Web app, PHP, Elgg, RDBMS, SQL, MySQL, Linux, Ubuntu',
+        },
+        features: 'Elgg plugins, Google maps integration',
+    },
+    {
+        name: 'Trivia',
+        years: {
+            2009: 'Web app, Ruby on Rails, Ruby, Javascript, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'SWIX',
+        years: {
+            2009: 'Web app, Python, Django, Javascript, RDBMS, SQL, MySQL, Linux, Ubuntu, Apache',
+            2008: 'Web app, Python, Django, Javascript, RDBMS, SQL, MySQL, Linux, Ubuntu, Apache',
+        },
+    },
+    {
+        name: 'Service Merchant',
+        years: {
+            2008: 'Web app, Ruby on Rails, Ruby, gems, RDBMS, SQL, Mocks, Integration tests, MySQL, Linux, Ubuntu',
+        },
+    },
+    {
+        name: 'Credit Reports',
+        years: {
+            2008: 'Web app, Ruby on Rails, Ruby, DSL, RDBMS, SQL, MySQL, Linux, Ubuntu, SVN',
+        },
+    },
+    {
+        name: 'Planner',
+        years: {
+            2008: 'Web app, Ruby on Rails, Ruby, RDBMS, SQL, MySQL, Linux, Ubuntu, SVN',
+        },
+    },
+    {
+        name: 'Webminer',
+        years: {
+            2008: 'CLI, Python, HTTP, regex, wget, Linux, Ubuntu, SVN',
+            2007: 'CLI, Python, HTTP, regex, wget, Linux, Ubuntu, SVN',
+            2006: 'CLI, Python, HTTP, regex, wget, Linux, Ubuntu, SVN',
+        },
+        features: 'Web crawler, Data pipeline',
+    },
+    {
+        name: 'CAS',
+        years: {
+            2006: 'Web app, ASP, JScript, ASP.NET, C#, RDBMS, SQL, MS SQL, TSQL, SQL Server, Selenium, Python, CVS, Visual Studio, IIS, RDP, Windows',
+            2005: 'Web app, ASP, JScript, ASP.NET, C#, RDBMS, SQL, MS SQL, TSQL, SQL Server, Selenium, Python, CVS, Visual Studio, IIS, RDP, Windows',
+        },
+        features: 'Browser fingerprint',
+    },
+    {
+        name: 'TAU-Master',
+        years: {
+            2005: 'Web app, PHP, HTTP, HTML, CSS, RDBMS, SQL, Oracle SQL, PL/SQL, Oracle, Apache, ftp, Linux, Windows',
+            2004: 'Web app, PHP, HTTP, HTML, CSS, RDBMS, SQL, Oracle SQL, PL/SQL, Oracle, Apache, ftp, Linux, Windows',
+            2003: 'Web app, PHP, HTTP, HTML, CSS, RDBMS, SQL, Oracle SQL, PL/SQL, Oracle, Apache, ftp, Linux, Windows',
+            2002: 'Web app, PHP, HTTP, HTML, CSS, RDBMS, SQL, Oracle SQL, PL/SQL, Oracle, Apache, ftp, Linux, Windows',
+            2001: 'Web app, PHP, HTTP, HTML, CSS, RDBMS, SQL, Oracle SQL, PL/SQL, Oracle, Apache, ftp, Linux, Windows',
+            2000: 'Web app, PHP, HTTP, HTML, CSS, RDBMS, SQL, Oracle SQL, PL/SQL, Oracle, Apache, ftp, Linux, Windows',
+        },
+        features: 'Homebrew framework',
+    },
+    {
+        name: 'Online Accounting Course',
+        years: {
+            2000: 'Web app, PHP, HTML, RDBMS, SQL, Oracle SQL, Oracle, Windows',
+        },
+    },
+];
 
 
 const Projects = ({toggle, expanded}) => (
@@ -382,12 +563,12 @@ const Projects = ({toggle, expanded}) => (
 
 
 const Timeline = () => {
-    let years= [];
+    let years = [];
     const first_year = FIRST_JOB_DAY.getFullYear();
-    for(let year=new Date().getFullYear();year >= first_year; year--) {
+    for (let year = new Date().getFullYear(); year >= first_year; year--) {
         years.push(year);
     }
-    return(
+    return (
         <section>
             <h2>Timeline</h2>
             <ul className="tags">

@@ -191,87 +191,95 @@ const Technologies = () => (
 );
 
 
-const PROJECTS = [
+const DATA = [
     {
-        name: 'PicturePipe Client PC',
+        name: 'Workflow Management System',
         years: {
-
+            2018: 'Web app, Django, Python, RDBMS, SQL, PostgreSQL, SQLite, Redis, BASH, nginx, uWSGI, Gitlab CI, Docker, git, Linux, Alpine, OSX, PyCharm',
         },
     },
     {
         name: 'CORE',
         years: {
-
+            2018: 'Web app, SPA, Thick client, Django, Python, Django REST Framework, Javascript, ES6, ES7, ES8, ESM, CSS, CSS grid, JS bundle, CSS bundle, yarn, Webpack, Babel, PostCSS, React, JSX, Redux, RDBMS, SQL, PostgreSQL, SQLite, BASH, Redis, nginx, uWSGI, Docker, Gitlab CI, git, Linux, Alpine, OSX, PyCharm',
+            2017: 'Web app, SPA, Thick client, Django, Python, Django REST Framework, Javascript, ES6, ES7, ES8, ESM, CSS, CSS grid, JS bundle, CSS bundle, yarn, Webpack, Babel, PostCSS, React, JSX, Redux, RDBMS, SQL, PostgreSQL, SQLite, BASH, Redis, nginx, uWSGI, Docker, Gitlab CI, git, Linux, Alpine, OSX, PyCharm',
+            2016: 'Web app, Django, Python, Javascript, RDBMS, SQL, MySQL, SQLite, Docker, Gitlab CI, git, Linux, Debian, nginx, uWSGI, OSX, PyCharm',
+            2015: 'Web app, Flask, Python, Docker, Linux, Debian, OSX, PyCharm',
         },
     },
     {
         name: 'DblExplorer',
         years: {
-
+            2018: 'Web app, Django, Python, Javascript, AMD, JS bundle, CSS bundle, SCSS, Bower, RDBMS, SQL, PostgreSQL, Redis, nginx, uWSGI, Gitlab CI, Docker, git, Linux, Debian, OSX, PyCharm',
+            2017: 'Web app, Django, Python, Javascript, AMD, JS bundle, CSS bundle, SCSS, Bower, RDBMS, SQL, PostgreSQL, Redis, nginx, uWSGI, Gitlab CI, Docker, git, Linux, Debian, OSX, PyCharm',
+            2016: 'Web app, Django, Python, Javascript, AMD, JS bundle, CSS bundle, SCSS, Bower, RDBMS, SQL, PostgreSQL, Redis, nginx, uWSGI, Gitlab CI, Docker, git, Linux, Debian, OSX, PyCharm',
         },
     },
     {
         name: 'PCP Termincontrolling',
         years: {
-
+            2017: 'Web app, Django, Python, RDBMS, SQL, PostgreSQL, SQLite, Redis, Gitlab CI, Docker, git, Linux, Alpine, OSX, PyCharm',
         },
     },
     {
-        name: 'Workflow Management System',
+        name: 'Event planner',
         years: {
-
+            2016: 'Web app, Django, Python, RDBMS, SQL, MySQL, Docker, git, OSX, Linux, Debian, PyCharm',
         },
     },
     {
-        name: 'Salt and Pepper',
+        name: 'Opera Leipzig VoD',
         years: {
-
-        },
-    },
-    {
-        name: 'Opera Leipzig',
-        years: {
-
+            2016: 'Web app, Django, Python, RDBMS, SQL, PostgreSQL, SQLite, memcached, AWS, AWS S3, AWS Lambda, AWS Elastictranscode, AWS SQS, nginx, uWSGI, git, Linux, Ubuntu, OSX, PyCharm',
         },
     },
     {
         name: 'Web Apps Archive',
         years: {
-
+            2015: 'Web app, Docker, BASH, nginx, PyCharm, OSX, git',
+            2014: 'Web app, Docker, BASH, nginx, OSX, git',
+        },
+    },
+    {
+        name: 'PicturePipe Client PC',
+        years: {
+            2017: 'Web kiosk, BASH, Linux, Ubuntu',
+            2016: 'Web kiosk, BASH, Linux, Ubuntu',
+            2015: 'Web kiosk, BASH, Linux, Ubuntu',
         },
     },
     {
         name: 'Prequel',
         years: {
-            2017: '',
-            2016: '',
-            2015: '',
-            2014: '',
-            2013: '',
+            2017: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, Gitlab CI, Docker, OSX, PyCharm, Linux, Ubuntu, Debian, git',
+            2016: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, Gitlab CI, Docker, OSX, PyCharm, Linux, Ubuntu, Debian, git',
+            2015: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, Docker, OSX, PyCharm, Linux, Ubuntu, Debian, git',
+            2014: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, OSX, PyCharm, Linux, Ubuntu, git',
+            2013: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, OSX, Linux, Ubuntu, git',
         }
     },
     {
         name: 'PicturePipe Encoder',
         years: {
-            2018: '',
-            2017: '',
-            2016: '',
-            2015: '',
-            2014: '',
-            2013: '',
-            2012: '',
+            2018: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, mp4Box, DVD, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+            2017: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, mp4Box, DVD, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+            2016: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, DVD, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+            2015: 'Cloud worker, Python, curl, wget, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, DVD, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
+            2014: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
+            2013: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD, BASH, Linux, OSX, Ubuntu, git',
+            2012: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD, BASH, Linux, OSX, Ubuntu, git',
         },
     },
     {
         name: 'PicturePipe',
         years: {
-            2018: 'Web app, Django, Python, Tastypie, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2017: 'Web app, Django, Python, Tastypie, Django REST Framework, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2016: 'Web app, Django, Python, Tastypie, Django REST Framework, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2015: 'Web app, Django, Python, Tastypie, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2014: 'Web app, Django, Python, Tastypie, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
-            2013: 'Web app, Django, Python, Tastypie, Piston, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
-            2012: 'Web app, Django, Python, Tastypie, Piston, Django REST Framework, Guardian, Flash, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
+            2018: 'Web app, Django, Python, Tastypie, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2017: 'Web app, Django, Python, Tastypie, Django REST Framework, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQ, SQLiteL, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2016: 'Web app, Django, Python, Tastypie, Django REST Framework, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2015: 'Web app, Django, Python, Tastypie, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2014: 'Web app, Django, Python, Tastypie, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2013: 'Web app, Django, Python, Tastypie, Piston, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
+            2012: 'Web app, Django, Python, Tastypie, Piston, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
         },
     },
     {
@@ -406,6 +414,8 @@ const PROJECTS = [
         },
     },
 ];
+
+
 
 
 const Projects = ({toggle, expanded}) => (

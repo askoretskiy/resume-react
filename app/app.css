@@ -66,6 +66,13 @@ section.photo {
     grid-column: 1/2;
 }
 
+.column1-3 {
+    grid-column: 1/3;
+}
+.column2-3 {
+    grid-column: 2/3;
+}
+
 ul.no-list {
     margin: 0;
     padding: 0 0 0 1.25em;
@@ -99,7 +106,7 @@ ul.tags li:hover, ul.tags li.selected {
 }
 
 ul.tags li.history:hover, ul.tags li.history.selected {
-    background-color: #CCCCCC;
+    background-color: #aac8e1;
 }
 
 ul.tags li.clicked {
@@ -192,4 +199,26 @@ a.toggle.less {
 .past_divider {
     border-top: dashed 1px red;
     margin: 1em 0;
+}
+
+.tags-w-groups {
+    position: relative;
+}
+
+.tag-name {
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+}
+
+.subtags {
+    margin: 0 0 0 8em;
+}
+
+.extra-spacing {
+    padding-bottom: 1em;
+}
+
+.extra-spacing h2 {
+    margin-bottom: 0.5em;
 }

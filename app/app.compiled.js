@@ -4,7 +4,6 @@ const BIRTH_DAY = new Date(1981, 12, 7, 12);
 const FIRST_JOB_DAY = new Date(2000, 9, 1, 12);
 const RELEVANT_YEAR = 2017;
 
-const is_relevant_year = year => Number.parseInt(year) >= RELEVANT_YEAR;
 const deserialize = text => new Set(text.split(',').map(value => value.trim()));
 
 const DATA = [{
@@ -40,7 +39,7 @@ const DATA = [{
 }, {
     name: 'Opera Leipzig VoD',
     years: {
-        2016: 'Web app, Django, Python, RDBMS, SQL, PostgreSQL, SQLite, memcached, AWS, AWS S3, AWS Lambda, AWS ElasticTranscode, AWS SQS, nginx, uWSGI, git, Linux, Ubuntu, OSX, PyCharm'
+        2016: 'Web app, Django, Python, RDBMS, SQL, PostgreSQL, SQLite, memcached, AWS, AWS S3, AWS S3 uploader, AWS Lambda, AWS ElasticTranscode, AWS SQS, nginx, uWSGI, git, Linux, Ubuntu, OSX, PyCharm'
     }
 }, {
     name: 'Web Apps Archive',
@@ -67,24 +66,24 @@ const DATA = [{
 }, {
     name: 'PicturePipe Encoder',
     years: {
-        2018: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS CLI, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, mp4Box, DVD ISO, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
-        2017: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS CLI, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, mp4Box, DVD ISO, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
-        2016: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS CLI, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, DVD ISO, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
-        2015: 'Cloud worker, Python, curl, wget, AWS CLI, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, DVD ISO, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
-        2014: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD ISO, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
-        2013: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD ISO, BASH, Linux, OSX, Ubuntu, git',
-        2012: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD ISO, BASH, Linux, OSX, Ubuntu, git'
+        2018: 'Cloud worker, Python, Celery, RabbitMQ, HTTP, AWS CLI, AWS, AWS S3, AWS EC2, AWS custom AMI, AWS Glacier, Packer, ffmpeg, mp4Box, DVD ISO, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+        2017: 'Cloud worker, Python, Celery, RabbitMQ, HTTP, AWS CLI, AWS, AWS S3, AWS EC2, AWS custom AMI, AWS Glacier, Packer, ffmpeg, mp4Box, DVD ISO, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+        2016: 'Cloud worker, Python, Celery, RabbitMQ, HTTP, AWS CLI, AWS, AWS S3, AWS EC2, AWS custom AMI, Packer, RTMP, ffmpeg, DVD ISO, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+        2015: 'Cloud worker, Python, HTTP, AWS CLI, AWS, AWS S3, AWS EC2, AWS custom AMI, Packer, RTMP, ffmpeg, DVD ISO, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
+        2014: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS custom AMI, RTMP, ffmpeg, DVD ISO, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
+        2013: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS custom AMI, RTMP, ffmpeg, DVD ISO, BASH, Linux, OSX, Ubuntu, git',
+        2012: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS custom AMI, RTMP, ffmpeg, DVD ISO, BASH, Linux, OSX, Ubuntu, git'
     }
 }, {
     name: 'PicturePipe',
     years: {
-        2018: 'Web app, Django, Python, Tastypie, tox, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-        2017: 'Web app, Django, Python, Tastypie, tox, Django REST Framework, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-        2016: 'Web app, Django, Python, Tastypie, tox, Django REST Framework, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-        2015: 'Web app, Django, Python, Tastypie, tox, Selenium, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-        2014: 'Web app, Django, Python, Tastypie, tox, Selenium, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-        2013: 'Web app, Django, Python, Tastypie, Piston, tox, Selenium, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
-        2012: 'Web app, Django, Python, Tastypie, Piston, tox, Selenium, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian'
+        2018: 'Web app, Django, Python, Tastypie, tox, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS S3 uploader, AWS EC2, AWS CloudFront, AWS Glacier, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+        2017: 'Web app, Django, Python, Tastypie, tox, Django REST Framework, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS S3 uploader, AWS EC2, AWS CloudFront, AWS Glacier, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+        2016: 'Web app, Django, Python, Tastypie, tox, RTMP, Django REST Framework, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS S3 uploader, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+        2015: 'Web app, Django, Python, Tastypie, tox, RTMP, Selenium, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS S3 uploader, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+        2014: 'Web app, Django, Python, Tastypie, tox, RTMP, Selenium, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS S3 uploader, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+        2013: 'Web app, Django, Python, Tastypie, Piston, tox, RTMP, Selenium, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS S3 uploader, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
+        2012: 'Web app, Django, Python, Tastypie, Piston, tox, RTMP, Selenium, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS S3 uploader, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian'
     }
 }, {
     name: 'Starmeo',
@@ -155,7 +154,7 @@ const DATA = [{
 }, {
     name: 'Service Merchant',
     years: {
-        2008: 'Web app, Ruby on Rails, Ruby, gems, RDBMS, SQL, Mocks, Integration tests, MySQL, Linux, Ubuntu'
+        2008: 'Web app, Ruby on Rails, Ruby, gems, RDBMS, SQL, MySQL, Linux, Ubuntu'
     }
 }, {
     name: 'Credit Reports',
@@ -170,16 +169,16 @@ const DATA = [{
 }, {
     name: 'Webminer',
     years: {
-        2008: 'CLI, Python, HTTP, regex, wget, Linux, Ubuntu',
-        2007: 'CLI, Python, HTTP, regex, wget, Linux, Ubuntu',
-        2006: 'CLI, Python, HTTP, regex, wget, Linux, Ubuntu'
+        2008: 'CLI app, Python, HTTP, regex, Linux, Ubuntu',
+        2007: 'CLI app, Python, HTTP, regex, Linux, Ubuntu',
+        2006: 'CLI app, Python, HTTP, regex, Linux, Ubuntu'
     },
     features: 'Web crawler, Data pipeline'
 }, {
     name: 'CAS',
     years: {
-        2006: 'Web app, ASP, JScript, ASP.NET, C#, RDBMS, SQL, MS SQL, TSQL, SQL Server, Selenium, Python, Visual Studio, IIS, RDP, Windows',
-        2005: 'Web app, ASP, JScript, ASP.NET, C#, RDBMS, SQL, MS SQL, TSQL, SQL Server, Selenium, Python, Visual Studio, IIS, RDP, Windows'
+        2006: 'Web app, ASP, JScript, ASP.NET, C#, RDBMS, SQL, MS SQL, T-SQL, SQL Server, Selenium, Python, Visual Studio, IIS, RDP, Windows',
+        2005: 'Web app, ASP, JScript, ASP.NET, C#, RDBMS, SQL, MS SQL, T-SQL, SQL Server, Selenium, Python, Visual Studio, IIS, RDP, Windows'
     },
     features: 'Browser fingerprint'
 }, {
@@ -200,7 +199,43 @@ const DATA = [{
     }
 }];
 
-const DEPRECATED_KEYWORDS = deserialize('tox, Bower, memcached, Ubuntu, Tastypie, SCSS, MySQL, JS bundle, HTML, Flask, Flash, Fabric, AMD, CSS bundle, wget, curl');
+const DEPRECATED_KEYWORDS = deserialize('tox, Bower, memcached, Ubuntu, Tastypie, SCSS, MySQL, JS bundle, HTML, Flask, Flash, Fabric, AMD, CSS bundle');
+
+const CATEGORY = deserialize('Web app, CLI app, Thick client, SPA, Cloud worker, Web kiosk');
+const FRONTEND = deserialize('Javascript, HTML, HTML5, CSS, SCSS, PostCSS, Webpack, ES6, ES7, ES8, ESM, AMD, Babel, CSS grid, yarn, React, Redux, JSX, Bower, CSS bundle, JS bundle, Flash');
+const BACKEND = deserialize('Python, SQL, T-SQL, PL/SQL, Oracle SQL, MS SQL, NodeJS, BASH, Django, C#, ASP.NET, ASP, JScript, Celery, RDBMS, NoSQL, YAML, Tastypie, Django REST Framework, ViewFlow, Guardian, Ruby on Rails, Ruby, PHP, Piston, Selenium, HTTP, gems, tox, Flask, Elgg, XMPP, regex');
+const INFRASTRUCTURE = deserialize('RabbitMQ, SQLite, MySQL, PostgreSQL, Oracle, Redis, memcached, Linux, nginx, uWSGI, Alpine, Debian, Ubuntu, Apache, IIS, CouchDB, SQL Server, Sybase, Solr');
+const CLOUD = deserialize('AWS, AWS CLI, AWS S3, AWS S3 uploader, AWS EC2, AWS custom AMI, AWS CloudFront, AWS Lambda, AWS SQS, AWS ElasticTranscode, AWS Glacier');
+const DEVOPS = deserialize('Docker, Gitlab CI, Packer, checkinstall, Fabric, RDP, ftp');
+const VIDEO = deserialize('ffmpeg, mp4Box, Apple HLS, MPEG DASH, DVD ISO, RTMP');
+
+const group_keywords = content => {
+    let groups = new Map([['Category', []], ['Front-end', []], ['Backend', []], ['Infrastructure', []], ['Cloud', []], ['DevOps', []], ['Video', []], ['Other', []]]);
+
+    let group, keyword;
+    for (let row of content) {
+        keyword = row[0];
+        if (CATEGORY.has(keyword)) {
+            group = 'Category';
+        } else if (FRONTEND.has(keyword)) {
+            group = 'Front-end';
+        } else if (BACKEND.has(keyword)) {
+            group = 'Backend';
+        } else if (INFRASTRUCTURE.has(keyword)) {
+            group = 'Infrastructure';
+        } else if (CLOUD.has(keyword)) {
+            group = 'Cloud';
+        } else if (DEVOPS.has(keyword)) {
+            group = 'DevOps';
+        } else if (VIDEO.has(keyword)) {
+            group = 'Video';
+        } else {
+            group = 'Other';
+        }
+        groups.get(group).push(row);
+    }
+    return groups;
+};
 
 /**********************************************************************************************************************/
 
@@ -261,6 +296,7 @@ const any = (generator, fn) => {
 };
 
 /**********************************************************************************************************************/
+
 const index_data = data => {
     const all_projects = new Set();
     const all_years = new Set();
@@ -311,9 +347,12 @@ const index_data = data => {
     return { projects, years, keywords };
 };
 
-const is_relevant_years = content => any(content.years, is_relevant_year);
+const is_recent_year = year => Number.parseInt(year) >= RELEVANT_YEAR;
+const is_past_year = year => !is_recent_year(year);
+const is_recent_years = content => any(content.years, is_recent_year);
+const is_past_years = content => any(content.years, is_past_year);
+const is_relevant_keyword = (keyword, content) => !DEPRECATED_KEYWORDS.has(keyword) && is_recent_years(content);
 
-const is_relevant_keyword = (keyword, content) => !DEPRECATED_KEYWORDS.has(keyword) && is_relevant_years(content);
 /**********************************************************************************************************************/
 
 const DATA_INDEXED = index_data(DATA);
@@ -387,7 +426,7 @@ class Application extends React.Component {
             React.createElement(Profile, null),
             React.createElement(
                 Years,
-                { filter: is_relevant_year,
+                { filter: is_recent_year,
                     hovered: this.state.hovered, clicked: this.state.clicked, subhovered: this.state.subhovered,
                     enter: this.enter.bind(this), leave: this.leave.bind(this), click: this.click.bind(this)
                 },
@@ -404,7 +443,7 @@ class Application extends React.Component {
             ),
             React.createElement(
                 Projs,
-                { filter: (project, content) => is_relevant_years(content),
+                { filter: (project, content) => is_recent_years(content),
                     hovered: this.state.hovered, clicked: this.state.clicked, subhovered: this.state.subhovered,
                     enter: this.enter.bind(this), leave: this.leave.bind(this), click: this.click.bind(this)
                 },
@@ -413,7 +452,7 @@ class Application extends React.Component {
             React.createElement('section', { className: 'past_divider' }),
             React.createElement(
                 Years,
-                { filter: year => !is_relevant_year(year),
+                { filter: year => !is_recent_year(year),
                     hovered: this.state.hovered, clicked: this.state.clicked, subhovered: this.state.subhovered,
                     enter: this.enter.bind(this), leave: this.leave.bind(this), click: this.click.bind(this)
                 },
@@ -421,7 +460,7 @@ class Application extends React.Component {
             ),
             React.createElement(
                 Keywords,
-                { filter: (keyword, content) => !is_relevant_years(content),
+                { filter: (keyword, content) => is_past_years(content),
                     hovered: this.state.hovered, clicked: this.state.clicked, subhovered: this.state.subhovered,
                     enter: this.enter.bind(this), leave: this.leave.bind(this), click: this.click.bind(this),
                     toggle_history: this.toggle_history.bind(this), show_history: this.state.show_history
@@ -430,13 +469,12 @@ class Application extends React.Component {
             ),
             React.createElement(
                 Projs,
-                { filter: (project, content) => !is_relevant_years(content),
+                { filter: (project, content) => !is_recent_years(content),
                     hovered: this.state.hovered, clicked: this.state.clicked, subhovered: this.state.subhovered,
                     enter: this.enter.bind(this), leave: this.leave.bind(this), click: this.click.bind(this)
                 },
                 'Past projects'
             ),
-            React.createElement(Technologies, null),
             React.createElement(
                 'footer',
                 { className: 'gray' },
@@ -471,7 +509,7 @@ const Years = ({ children, filter, hovered, clicked, subhovered, enter, leave, c
         { className: 'tags' },
         [...DATA_INDEXED.years.entries()].filter(([year, content]) => filter(year, content)).map(([year, content]) => React.createElement(
             Row,
-            { key: year, index_key: `years:${year}`, content: content, is_history: !is_relevant_year(year),
+            { key: year, index_key: `years:${year}`, content: content, is_history: !is_recent_year(year),
                 hovered: hovered, clicked: clicked, subhovered: subhovered, enter: enter, leave: leave,
                 click: click },
             year
@@ -479,30 +517,41 @@ const Years = ({ children, filter, hovered, clicked, subhovered, enter, leave, c
     )
 );
 
-// TODO: Group technologies by type
-// TODO: Show content for previous years (e.g. < 2015) only after a click
+const Keywords = ({ children, filter, hovered, clicked, subhovered, enter, leave, click, show_history, toggle_history }) => {
+    let content = [...DATA_INDEXED.keywords.entries()].filter(([keyword, content]) => filter(keyword, content));
 
-const Keywords = ({ children, filter, hovered, clicked, subhovered, enter, leave, click, show_history, toggle_history }) => React.createElement(
-    'section',
-    null,
-    React.createElement(
-        'h2',
-        null,
-        children
-    ),
-    React.createElement(
-        'ul',
-        { className: 'tags' },
-        [...DATA_INDEXED.keywords.entries()].filter(([keyword, content]) => filter(keyword, content)).map(([keyword, content]) => React.createElement(
-            Row,
-            { key: keyword, index_key: `keywords:${keyword}`, content: content,
-                is_history: !is_relevant_years(content),
-                hovered: hovered, clicked: clicked, subhovered: subhovered, enter: enter, leave: leave,
-                click: click },
-            keyword
+    return React.createElement(
+        'section',
+        { className: 'extra-spacing' },
+        React.createElement(
+            'h2',
+            null,
+            children
+        ),
+        [...group_keywords(content).entries()].map(([group, rows]) => React.createElement(
+            'div',
+            { className: 'column1-3 tags-w-groups' },
+            React.createElement(
+                'div',
+                { className: 'column1-2 colon-after tag-name' },
+                group
+            ),
+            React.createElement(
+                'ul',
+                { className: 'tags subtags' },
+                rows.map(([keyword, content]) => React.createElement(
+                    Row,
+                    { key: keyword, index_key: `keywords:${keyword}`, content: content,
+                        is_history: !is_recent_years(content),
+                        hovered: hovered, clicked: clicked, subhovered: subhovered, enter: enter,
+                        leave: leave,
+                        click: click },
+                    keyword
+                ))
+            )
         ))
-    )
-);
+    );
+};
 
 const Projs = ({ children, hovered, clicked, subhovered, enter, leave, click, filter }) => React.createElement(
     'section',
@@ -518,7 +567,7 @@ const Projs = ({ children, hovered, clicked, subhovered, enter, leave, click, fi
         [...DATA_INDEXED.projects.entries()].filter(([project, content]) => filter(project, content)).map(([project, content]) => React.createElement(
             Row,
             { key: project, index_key: `projects:${project}`, content: content,
-                is_history: !is_relevant_years(content),
+                is_history: !is_recent_years(content),
                 hovered: hovered, clicked: clicked, subhovered: subhovered, enter: enter, leave: leave,
                 click: click },
             project
@@ -574,12 +623,12 @@ const Services = () => React.createElement(
         React.createElement(
             'li',
             null,
-            'Project manager'
+            'Business analyst'
         ),
         React.createElement(
             'li',
             null,
-            'Business analyst'
+            'Project manager'
         )
     )
 );
@@ -606,7 +655,7 @@ const Profile = () => React.createElement(
             'li',
             null,
             get_years_since(FIRST_JOB_DAY),
-            ' years as a hired software developer'
+            ' years employed as a software developer'
         ),
         React.createElement(
             'li',
@@ -663,319 +712,6 @@ const Contacts = () => React.createElement(
             'skype'
         ),
         ' tonn81'
-    )
-);
-
-const Technologies = () => React.createElement(
-    'section',
-    null,
-    React.createElement(
-        'h2',
-        null,
-        'Stack'
-    ),
-    React.createElement(
-        'div',
-        { className: 'tags-grouped' },
-        React.createElement(
-            'div',
-            { className: 'column1-2 tag-group colon-after' },
-            'Front-end'
-        ),
-        React.createElement(
-            'ul',
-            { className: 'tags' },
-            React.createElement(
-                'li',
-                null,
-                'Javascript'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'ES8'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'React'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'JSX'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Redux'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Webpack 3'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Babel'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'yarn'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'React hot-reload'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'CSS'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'HTML5'
-            )
-        ),
-        React.createElement(
-            'div',
-            { className: 'column1-2 tag-group colon-after' },
-            'Backend'
-        ),
-        React.createElement(
-            'ul',
-            { className: 'tags' },
-            React.createElement(
-                'li',
-                null,
-                'Python 3'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Django'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Django i18n'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Celery'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'JSON REST API'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Django REST framework'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'SQL'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'MySQL'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'SQLite'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'PostgreSQL'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Redis'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'RabbitMQ'
-            )
-        ),
-        React.createElement(
-            'div',
-            { className: 'column1-2 tag-group colon-after' },
-            'Cloud'
-        ),
-        React.createElement(
-            'ul',
-            { className: 'tags' },
-            React.createElement(
-                'li',
-                null,
-                'AWS S3'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'AWS S3 uploader'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'AWS EC2'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'AWS custom EMI'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Packer'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'AWS CloudFront'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'AWS Glacier'
-            )
-        ),
-        React.createElement(
-            'div',
-            { className: 'column1-2 tag-group colon-after' },
-            'DevOps'
-        ),
-        React.createElement(
-            'ul',
-            { className: 'tags' },
-            React.createElement(
-                'li',
-                null,
-                'BASH'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Docker'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Docker for Mac'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Docker Compose'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'GitLab CI'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'nginx'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'uWSGI'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Linux'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Debian'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Alpine'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'compilation'
-            )
-        ),
-        React.createElement(
-            'div',
-            { className: 'column1-2 tag-group colon-after' },
-            'Video'
-        ),
-        React.createElement(
-            'ul',
-            { className: 'tags' },
-            React.createElement(
-                'li',
-                null,
-                'ffmpeg'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'HTML5 video'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'HLS'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'DASH'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'RTMP'
-            )
-        ),
-        React.createElement(
-            'div',
-            { className: 'column1-2 tag-group colon-after' },
-            'More'
-        ),
-        React.createElement(
-            'ul',
-            { className: 'tags' },
-            React.createElement(
-                'li',
-                null,
-                'MacOS'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'PyCharm'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Ubuntu'
-            )
-        )
     )
 );
 

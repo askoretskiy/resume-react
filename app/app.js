@@ -8,7 +8,7 @@ const DATA = [
     {
         name: 'Workflow Management System',
         years: {
-            2018: 'Web app, Django, Python, RDBMS, SQL, PostgreSQL, SQLite, Redis, BASH, nginx, uWSGI, Gitlab CI, Docker, git, Linux, Alpine, OSX, PyCharm',
+            2018: 'Web app, Django, Python, ViewFlow, RDBMS, SQL, PostgreSQL, SQLite, Redis, BASH, nginx, uWSGI, Gitlab CI, Docker, git, Linux, Alpine, OSX, PyCharm',
         },
     },
     {
@@ -66,18 +66,18 @@ const DATA = [
         years: {
             2017: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, Gitlab CI, Docker, OSX, PyCharm, Linux, Ubuntu, Debian, git',
             2016: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, Gitlab CI, Docker, OSX, PyCharm, Linux, Ubuntu, Debian, git',
-            2015: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, Docker, OSX, PyCharm, Linux, Ubuntu, Debian, git',
-            2014: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, OSX, PyCharm, Linux, Ubuntu, git',
-            2013: 'Web app, Django, Python, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, OSX, Linux, Ubuntu, git',
+            2015: 'Web app, Django, Python, Selenium, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, Docker, OSX, PyCharm, Linux, Ubuntu, Debian, git',
+            2014: 'Web app, Django, Python, Selenium, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, OSX, PyCharm, Linux, Ubuntu, git',
+            2013: 'Web app, Django, Python, Selenium, Javascript, CSS, HTML, YAML, Celery, RDBMS, SQL, MySQL, SQLite, memcached, Redis, RabbitMQ, nginx, uWSGI, Fabric, BASH, OSX, Linux, Ubuntu, git',
         }
     },
     {
         name: 'PicturePipe Encoder',
         years: {
-            2018: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, mp4Box, DVD ISO, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
-            2017: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, mp4Box, DVD ISO, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
-            2016: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, DVD ISO, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
-            2015: 'Cloud worker, Python, curl, wget, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, DVD ISO, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
+            2018: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS CLI, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, mp4Box, DVD ISO, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+            2017: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS CLI, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, mp4Box, DVD ISO, MPEG DASH, Apple HLS, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+            2016: 'Cloud worker, Python, Celery, RabbitMQ, curl, wget, AWS CLI, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, DVD ISO, Docker, BASH, checkinstall, Linux, PyCharm, OSX, Debian, git',
+            2015: 'Cloud worker, Python, curl, wget, AWS CLI, AWS, AWS S3, AWS EC2, AWS AMI, Packer, ffmpeg, DVD ISO, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
             2014: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD ISO, BASH, checkinstall, Docker, Linux, PyCharm, OSX, Debian, git',
             2013: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD ISO, BASH, Linux, OSX, Ubuntu, git',
             2012: 'Cloud worker, Python, AWS, AWS S3, AWS EC2, AWS AMI, ffmpeg, DVD ISO, BASH, Linux, OSX, Ubuntu, git',
@@ -86,13 +86,13 @@ const DATA = [
     {
         name: 'PicturePipe',
         years: {
-            2018: 'Web app, Django, Python, Tastypie, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2017: 'Web app, Django, Python, Tastypie, Django REST Framework, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2016: 'Web app, Django, Python, Tastypie, Django REST Framework, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2015: 'Web app, Django, Python, Tastypie, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2014: 'Web app, Django, Python, Tastypie, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2013: 'Web app, Django, Python, Tastypie, Piston, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
-            2012: 'Web app, Django, Python, Tastypie, Piston, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
+            2018: 'Web app, Django, Python, Tastypie, tox, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2017: 'Web app, Django, Python, Tastypie, tox, Django REST Framework, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2016: 'Web app, Django, Python, Tastypie, tox, Django REST Framework, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2015: 'Web app, Django, Python, Tastypie, tox, Selenium, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2014: 'Web app, Django, Python, Tastypie, tox, Selenium, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2013: 'Web app, Django, Python, Tastypie, Piston, tox, Selenium, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
+            2012: 'Web app, Django, Python, Tastypie, Piston, tox, Selenium, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
         },
     },
     {
@@ -280,8 +280,8 @@ const set_toggle = (set, value) => {
 };
 
 const any = (generator, fn) => {
-    for(let value of generator) {
-        if(fn(value)) {
+    for (let value of generator) {
+        if (fn(value)) {
             return true;
         }
     }
@@ -289,6 +289,56 @@ const any = (generator, fn) => {
 };
 
 /**********************************************************************************************************************/
+const index_data = data => {
+    const all_projects = new Set();
+    const all_years = new Set();
+    const all_keywords = new Set();
+
+    for (let project of data) {
+        all_projects.add(project.name);
+        for (let [year, keywords] of Object.entries(project.years)) {
+            all_years.add(year);
+            for (let keyword of keywords.split(',')) {
+                all_keywords.add(keyword.trim());
+            }
+        }
+    }
+
+    let projects = new Map([...all_projects].sort().map(project => [project, {years: new Set(), keywords: new Set()}]));
+    let years = new Map([...all_years].sort().map(year => [year, {projects: new Set(), keywords: new Set()}]));
+    let keywords = new Map([...all_keywords].sort().map(keyword => [keyword, {projects: new Set(), years: new Set()}]));
+
+    let project;
+    let project_obj;
+    let year_obj;
+    let keyword_obj;
+    for (let row of data) {
+        project = row.name;
+        project_obj = projects.get(project);
+
+        for (let [year, keywords_] of Object.entries(row.years)) {
+            year_obj = years.get(year);
+
+            project_obj.years.add(year);
+            year_obj.projects.add(project);
+
+            for (let keyword of keywords_.split(',')) {
+                keyword = keyword.trim();
+                keyword_obj = keywords.get(keyword);
+
+                project_obj.keywords.add(keyword);
+                year_obj.keywords.add(keyword);
+                keyword_obj.projects.add(project);
+                keyword_obj.years.add(year);
+            }
+        }
+    }
+
+    return {projects, years, keywords};
+};
+/**********************************************************************************************************************/
+
+const DATA_INDEXED = index_data(DATA);
 
 class Application extends React.Component {
     constructor(props) {
@@ -297,6 +347,7 @@ class Application extends React.Component {
             expanded: new Set(),
             hovered: new Set(),
             clicked: new Set(),
+            subhovered: new Set(),
         };
     }
 
@@ -319,9 +370,23 @@ class Application extends React.Component {
     }
 
     click(key, items) {
-        this.setState(prevState => ({
-            clicked: set_toggle(prevState.clicked, key),
-        }));
+        this.setState(prevState => {
+            let clicked = set_toggle(prevState.clicked, key);
+            let subhovered = new Set();
+
+            let k, v;
+            for (let row of clicked) {
+                [k, v] = row.split(':');
+                for (let index_key of get_keys(DATA_INDEXED[k].get(v))) {
+                    subhovered.add(index_key);
+                }
+            }
+
+            return {
+                clicked,
+                subhovered,
+            };
+        });
     }
 
     render() {
@@ -334,16 +399,14 @@ class Application extends React.Component {
                 <Services/>
                 <Profile/>
 
-                <Years hovered={this.state.hovered} clicked={this.state.clicked}
+                <Years hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
                        enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}/>
-                <Keywords hovered={this.state.hovered} clicked={this.state.clicked}
+                <Keywords hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
                           enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}/>
-                <Projs hovered={this.state.hovered} clicked={this.state.clicked}
+                <Projs hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
                        enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}/>
 
                 <Technologies/>
-                <Timeline/>
-                <Projects toggle={this.toggle.bind(this)} expanded={this.state.expanded}/>
                 <footer className="gray">
                     &copy; {new Date().getFullYear()} Artem Skoretskiy
                 </footer>
@@ -353,72 +416,22 @@ class Application extends React.Component {
 }
 
 
-const index_data = data => {
-    const all_projects = new Set();
-    const all_years = new Set();
-    const all_keywords = new Set();
-
-    for (let project of data) {
-        all_projects.add(project.name);
-        for (let [year, keywords] of Object.entries(project.years)) {
-            all_years.add(Number.parseInt(year));
-            for (let keyword of keywords.split(',')) {
-                all_keywords.add(keyword.trim());
-            }
-        }
-    }
-
-    let projects = new Map([...all_projects].sort().map(project => [project, {years: new Set(), keywords: new Set()}]));
-    let years = new Map([...all_years].sort().map(year => [year, {projects: new Set(), keywords: new Set()}]));
-    let keywords = new Map([...all_keywords].sort().map(keyword => [keyword, {projects: new Set(), years: new Set()}]));
-
-    let project;
-    let project_obj;
-    let year_obj;
-    let keyword_obj;
-    for (let row of data) {
-        project = row.name;
-        project_obj = projects.get(project);
-
-        for (let [year, keywords_] of Object.entries(row.years)) {
-            year = Number.parseInt(year);
-            year_obj = years.get(year);
-
-            project_obj.years.add(year);
-            year_obj.projects.add(project);
-
-            for (let keyword of keywords_.split(',')) {
-                keyword = keyword.trim();
-                keyword_obj = keywords.get(keyword);
-
-                project_obj.keywords.add(keyword);
-                year_obj.keywords.add(keyword);
-                keyword_obj.projects.add(project);
-                keyword_obj.years.add(year);
-            }
-        }
-    }
-
-    return {projects, years, keywords};
-};
-
-const DATA_INDEXED = index_data(DATA);
-
-const Row = ({hovered, clicked, enter, leave, click, index_key, children, content}) => (
-    <li className={`clickable ${hovered.has(index_key) ? 'selected' : ''} ${clicked.has(index_key) ? 'clicked' : ''}`}
+const Row = ({hovered, clicked, subhovered, enter, leave, click, index_key, children, content}) => (
+    <li className={`clickable ${hovered.has(index_key) || subhovered.has(index_key) ? 'selected' : ''} ${clicked.has(index_key) ? 'clicked' : ''}`}
         onMouseEnter={event => enter(index_key, content)}
         onMouseLeave={event => leave(index_key, content)}
         onClick={event => click(index_key, content)}
     >{children}</li>
 );
 
-const Years = ({hovered, clicked, enter, leave, click}) => (
+const Years = ({hovered, clicked, subhovered, enter, leave, click}) => (
     <section>
-        <h2>Years</h2>
+        <h2>Timeline</h2>
         <ul className="tags">
             {[...DATA_INDEXED.years.entries()].map(([year, content]) => (
                 <Row key={year} index_key={`years:${year}`} content={content}
-                     hovered={hovered} clicked={clicked} enter={enter} leave={leave} click={click}>
+                     hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
+                     click={click}>
                     {year}
                 </Row>
             ))}
@@ -427,13 +440,14 @@ const Years = ({hovered, clicked, enter, leave, click}) => (
 );
 
 
-const Keywords = ({hovered, clicked, enter, leave, click}) => (
+const Keywords = ({hovered, clicked, subhovered, enter, leave, click}) => (
     <section>
-        <h2>Keywords</h2>
+        <h2>Technologies</h2>
         <ul className="tags">
             {[...DATA_INDEXED.keywords.entries()].map(([keyword, content]) => (
                 <Row key={keyword} index_key={`keywords:${keyword}`} content={content}
-                     hovered={hovered} clicked={clicked} enter={enter} leave={leave} click={click}>
+                     hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
+                     click={click}>
                     {keyword}
                 </Row>
             ))}
@@ -441,13 +455,14 @@ const Keywords = ({hovered, clicked, enter, leave, click}) => (
     </section>
 );
 
-const Projs = ({hovered, clicked, enter, leave, click}) => (
+const Projs = ({hovered, clicked, subhovered, enter, leave, click}) => (
     <section>
         <h2>Projects</h2>
         <ul className="tags">
             {[...DATA_INDEXED.projects.entries()].map(([project, content]) => (
                 <Row key={project} index_key={`projects:${project}`} content={content}
-                     hovered={hovered} clicked={clicked} enter={enter} leave={leave} click={click}>
+                     hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
+                     click={click}>
                     {project}
                 </Row>
             ))}
@@ -487,8 +502,8 @@ const Profile = () => (
     <section className="profile_column1">
         <h2>Profile</h2>
         <ul>
-            <li>{get_years_since(FIRST_JOB_DAY)} years as [paid] software developer</li>
-            <li>Live in Köln <span className="gray">(Niederlassungserlaubnis)</span></li>
+            <li>{get_years_since(FIRST_JOB_DAY)} years as a hired software developer</li>
+            <li>Live in Köln <span className="gray">(EU Niederlassungserlaubnis)</span></li>
             <li>Master of Economy</li>
             <li>Intermediate German <span className="gray">(B2.1)</span></li>
             <li>Fluent English</li>
@@ -580,189 +595,6 @@ const Technologies = () => (
         </div>
     </section>
 );
-
-
-const Projects = ({toggle, expanded}) => (
-    <section>
-        <h2>Projects</h2>
-
-        <article className="project">
-            <h3>CORE</h3>
-            <ul className="tags">
-                <li>Javascript</li>
-                <li>React</li>
-                <li>Redux</li>
-                <li>Webpack</li>
-                <li>Babel</li>
-                <li>Python 3</li>
-                <li>Django</li>
-                <li>Django REST Framework</li>
-                <li>PostgreSQL</li>
-                <li>Redis</li>
-                <li>Docker</li>
-                <li>nginx</li>
-                <li>uWSGI</li>
-                <li>Gitlab CI</li>
-            </ul>
-            <p>Web application for company's internal processes (billing, time logging, availability, drinks, etc)
-                automation. More</p>
-        </article>
-
-        <article className="project">
-            <h3>Workflow management system</h3>
-            <ul className="tags">
-                <li>Python 3</li>
-                <li>Django</li>
-                <li>ViewFlow</li>
-                <li>PostgreSQL</li>
-                <li>Redis</li>
-                <li>Docker</li>
-                <li>nginx</li>
-                <li>uWSGI</li>
-                <li>Gitlab CI</li>
-                <li>BPMN</li>
-            </ul>
-            <p>Web application for company's workflows (processes) automation. [More]</p>
-        </article>
-
-        <article className="project">
-            <h3>PicturePipe Encoder</h3>
-            <ul className="tags">
-                <li>Python</li>
-                <li>Celery</li>
-                <li>RabbitMQ</li>
-                <li>ffmpeg</li>
-                <li>mp4Box</li>
-                <li>Debian</li>
-                <li>Docker</li>
-                <li>BASH</li>
-                <li>AWS CLI</li>
-                <li>wget</li>
-                <li>curl</li>
-                <li>compilation</li>
-                <li>EC2</li>
-                <li>EC2 custom AMI</li>
-                <li>Packer</li>
-            </ul>
-            <p>Application that transcodes user video into requested format for PicturePipe.
-                <ToggleLink slug="pp-encoder-features" toggle={toggle} expanded={expanded}/>
-            </p>
-
-            {!expanded.has('pp-encoder-features') ? null : (
-                <ul>
-                    <li>2018: Integrate proprietary HEVC (h265) encoder</li>
-                    <li>2018: Benchmark EC2 instance types</li>
-                    <li>2017: Archive source to AWS Glacier</li>
-                    <li>2017: Generate Apple HLS assets</li>
-                    <li>2017: Generate MPEG DASH assets</li>
-                    <li>???: Download source file by URL (including password)</li>
-                </ul>
-            )}
-        </article>
-
-        <article className="project">
-            <h3>PicturePipe</h3>
-            <ul className="tags">
-                <li>Python</li>
-                <li>Django</li>
-                <li>Tastypie</li>
-                <li>Guardian</li>
-                <li>MySQL</li>
-                <li>memcached</li>
-                <li>Docker</li>
-                <li>tox</li>
-                <li>nginx</li>
-                <li>uWSGI</li>
-                <li>Selenium</li>
-                <li>Gitlab CI</li>
-            </ul>
-            <p>Web platform for receiving, storing and playing videos and its metadata. [More]</p>
-            <ul>
-                <li>2017: Play Apple HLS assets</li>
-                <li>2017: Play MPEG DASH assets</li>
-                <li>2017: Place secure overlay on HTML5 video</li>
-                <li>???: Prepare web kiosks based on Linux</li>
-                <li>???: Scale number of EC2 instance for PicturePipe Encoder according to load</li>
-            </ul>
-        </article>
-
-        <article className="project">
-            <h3>DblExplorer</h3>
-            <ul className="tags">
-                <li>Python</li>
-                <li>Django</li>
-                <li>PostgreSQL</li>
-                <li>Redis</li>
-                <li>Docker</li>
-                <li>nginx</li>
-                <li>uWSGI</li>
-                <li>Gitlab CI</li>
-            </ul>
-            <p>Online catalog for electric machines. [More]</p>
-        </article>
-
-        <article className="project">
-            <h3>PCP Termincontrolling</h3>
-            <ul className="tags">
-                <li>Python 3</li>
-                <li>Django</li>
-                <li>PostgreSQL</li>
-                <li>Redis</li>
-                <li>Docker</li>
-                <li>nginx</li>
-                <li>uWSGI</li>
-                <li>Gitlab CI</li>
-            </ul>
-            <p>Web application for company's workflows (processes) automation. [More]</p>
-        </article>
-
-        <article className="project">
-            <h3>Prequel</h3>
-            <ul className="tags">
-                <li>Python</li>
-                <li>Django</li>
-                <li>MySQL</li>
-                <li>memcached</li>
-                <li>Redis</li>
-                <li>Docker</li>
-                <li>tox</li>
-                <li>nginx</li>
-                <li>uWSGI</li>
-                <li>Gitlab CI</li>
-            </ul>
-            <p>Web-based videotheque that used PicturePipe as backend. [More]</p>
-        </article>
-    </section>
-);
-
-
-const Timeline = () => {
-    let years = [];
-    const first_year = FIRST_JOB_DAY.getFullYear();
-    for (let year = new Date().getFullYear(); year >= first_year; year--) {
-        years.push(year);
-    }
-    return (
-        <section>
-            <h2>Timeline</h2>
-            <ul className="tags">
-                {years.map(year => (
-                    <li>{year}</li>
-                ))}
-            </ul>
-        </section>
-    );
-};
-
-const ToggleLink = ({toggle, expanded, slug}) => {
-    let slug_expanded = expanded.has(slug);
-    return (
-        <a href="#" className={`toggle ${slug_expanded ? 'less' : 'more'}`} onClick={e => {
-            toggle(slug);
-            e.preventDefault();
-        }}>{slug_expanded ? 'Less' : 'More'}</a>
-    )
-};
 
 
 document.addEventListener('DOMContentLoaded', () => {

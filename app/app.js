@@ -2,6 +2,10 @@
 
 const BIRTH_DAY = new Date(1981, 12, 7, 12);
 const FIRST_JOB_DAY = new Date(2000, 9, 1, 12);
+const RELEVANT_YEAR = 2017;
+
+const is_relevant_year = year => Number.parseInt(year) >= RELEVANT_YEAR;
+const deserialize = text => new Set(text.split(',').map(value => value.trim()));
 
 
 const DATA = [
@@ -88,8 +92,8 @@ const DATA = [
         years: {
             2018: 'Web app, Django, Python, Tastypie, tox, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
             2017: 'Web app, Django, Python, Tastypie, tox, Django REST Framework, MPEG DASH, Apple HLS, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2016: 'Web app, Django, Python, Tastypie, tox, Django REST Framework, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
-            2015: 'Web app, Django, Python, Tastypie, tox, Selenium, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2016: 'Web app, Django, Python, Tastypie, tox, Django REST Framework, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, Gitlab CI, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
+            2015: 'Web app, Django, Python, Tastypie, tox, Selenium, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
             2014: 'Web app, Django, Python, Tastypie, tox, Selenium, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, Docker, OSX, Fabric, uWSGI, nginx, git, Linux, Debian, PyCharm',
             2013: 'Web app, Django, Python, Tastypie, Piston, tox, Selenium, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
             2012: 'Web app, Django, Python, Tastypie, Piston, tox, Selenium, Django REST Framework, Guardian, Flash, HTML5, CSS, Javascript, BASH, Celery, RabbitMQ, memcached, RDBMS, SQL, MySQL, SQLite, AWS, AWS S3, AWS EC2, AWS CloudFront, OSX, Fabric, uWSGI, nginx, git, Linux, Debian',
@@ -228,8 +232,10 @@ const DATA = [
     },
 ];
 
-/**********************************************************************************************************************/
+const DEPRECATED_KEYWORDS = deserialize('tox, Bower, memcached, Ubuntu, Tastypie, SCSS, MySQL, JS bundle, HTML, Flask, Flash, Fabric, AMD, CSS bundle, wget, curl');
 
+
+/**********************************************************************************************************************/
 
 const get_years_since = date => get_full_years(date, new Date());
 
@@ -298,14 +304,17 @@ const index_data = data => {
         all_projects.add(project.name);
         for (let [year, keywords] of Object.entries(project.years)) {
             all_years.add(year);
-            for (let keyword of keywords.split(',')) {
-                all_keywords.add(keyword.trim());
+            for (let keyword of deserialize(keywords)) {
+                all_keywords.add(keyword);
             }
         }
     }
 
     let projects = new Map([...all_projects].sort().map(project => [project, {years: new Set(), keywords: new Set()}]));
-    let years = new Map([...all_years].sort().map(year => [year, {projects: new Set(), keywords: new Set()}]));
+    let years = new Map([...all_years].sort().reverse().map(year => [year, {
+        projects: new Set(),
+        keywords: new Set()
+    }]));
     let keywords = new Map([...all_keywords].sort().map(keyword => [keyword, {projects: new Set(), years: new Set()}]));
 
     let project;
@@ -322,8 +331,7 @@ const index_data = data => {
             project_obj.years.add(year);
             year_obj.projects.add(project);
 
-            for (let keyword of keywords_.split(',')) {
-                keyword = keyword.trim();
+            for (let keyword of deserialize(keywords_)) {
                 keyword_obj = keywords.get(keyword);
 
                 project_obj.keywords.add(keyword);
@@ -336,6 +344,10 @@ const index_data = data => {
 
     return {projects, years, keywords};
 };
+
+const is_relevant_years = content => any(content.years, is_relevant_year);
+
+const is_relevant_keyword = (keyword, content) => !DEPRECATED_KEYWORDS.has(keyword) && is_relevant_years(content);
 /**********************************************************************************************************************/
 
 const DATA_INDEXED = index_data(DATA);
@@ -344,16 +356,17 @@ class Application extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            expanded: new Set(),
+            show_history: false,
             hovered: new Set(),
             clicked: new Set(),
             subhovered: new Set(),
         };
     }
 
-    toggle(slug) {
+    toggle_history() {
+        console.log('toggle history');
         this.setState(prevState => ({
-            expanded: toggle_set(prevState.expanded, slug),
+            show_history: !prevState.show_history,
         }));
     }
 
@@ -399,12 +412,37 @@ class Application extends React.Component {
                 <Services/>
                 <Profile/>
 
-                <Years hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
-                       enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}/>
-                <Keywords hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
-                          enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}/>
-                <Projs hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
-                       enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}/>
+                <Years filter={is_relevant_year}
+                       hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
+                       enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}
+                >Years</Years>
+                <Keywords filter={is_relevant_keyword}
+                          hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
+                          enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}
+                          toggle_history={this.toggle_history.bind(this)} show_history={this.state.show_history}
+                >My stack</Keywords>
+                <Projs filter={(project, content) => is_relevant_years(content)}
+                       hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
+                       enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}
+                >Last projects</Projs>
+
+                <section className="past_divider"/>
+
+                <Years filter={year => !is_relevant_year(year)}
+                       hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
+                       enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}
+                >Past</Years>
+
+                <Keywords filter={(keyword, content) => !is_relevant_years(content)}
+                          hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
+                          enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}
+                          toggle_history={this.toggle_history.bind(this)} show_history={this.state.show_history}
+                >Experience</Keywords>
+
+                <Projs filter={(project, content) => !is_relevant_years(content)}
+                       hovered={this.state.hovered} clicked={this.state.clicked} subhovered={this.state.subhovered}
+                       enter={this.enter.bind(this)} leave={this.leave.bind(this)} click={this.click.bind(this)}
+                >Past projects</Projs>
 
                 <Technologies/>
                 <footer className="gray">
@@ -416,56 +454,65 @@ class Application extends React.Component {
 }
 
 
-const Row = ({hovered, clicked, subhovered, enter, leave, click, index_key, children, content}) => (
-    <li className={`clickable ${hovered.has(index_key) || subhovered.has(index_key) ? 'selected' : ''} ${clicked.has(index_key) ? 'clicked' : ''}`}
+const Row = ({hovered, clicked, subhovered, enter, leave, click, index_key, children, content, is_history}) => (
+    <li className={`clickable ${hovered.has(index_key) || subhovered.has(index_key) ? 'selected' : ''} ${clicked.has(index_key) ? 'clicked' : ''} ${is_history ? 'history' : ''}`}
         onMouseEnter={event => enter(index_key, content)}
         onMouseLeave={event => leave(index_key, content)}
         onClick={event => click(index_key, content)}
     >{children}</li>
 );
 
-const Years = ({hovered, clicked, subhovered, enter, leave, click}) => (
+
+const Years = ({children, filter, hovered, clicked, subhovered, enter, leave, click}) => (
     <section>
-        <h2>Timeline</h2>
+        {!children ? null : (<h2>{children}</h2>)}
         <ul className="tags">
-            {[...DATA_INDEXED.years.entries()].map(([year, content]) => (
-                <Row key={year} index_key={`years:${year}`} content={content}
-                     hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
-                     click={click}>
-                    {year}
-                </Row>
-            ))}
+            {[...DATA_INDEXED.years.entries()].filter(([year, content]) => filter(year, content))
+                .map(([year, content]) => (
+                    <Row key={year} index_key={`years:${year}`} content={content} is_history={!is_relevant_year(year)}
+                         hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
+                         click={click}>
+                        {year}
+                    </Row>
+                ))}
         </ul>
     </section>
 );
 
 
-const Keywords = ({hovered, clicked, subhovered, enter, leave, click}) => (
+// TODO: Group technologies by type
+// TODO: Show content for previous years (e.g. < 2015) only after a click
+
+const Keywords = ({children, filter, hovered, clicked, subhovered, enter, leave, click, show_history, toggle_history}) => (
     <section>
-        <h2>Technologies</h2>
+        <h2>{children}</h2>
         <ul className="tags">
-            {[...DATA_INDEXED.keywords.entries()].map(([keyword, content]) => (
-                <Row key={keyword} index_key={`keywords:${keyword}`} content={content}
-                     hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
-                     click={click}>
-                    {keyword}
-                </Row>
-            ))}
+            {[...DATA_INDEXED.keywords.entries()].filter(([keyword, content]) => filter(keyword, content))
+                .map(([keyword, content]) => (
+                    <Row key={keyword} index_key={`keywords:${keyword}`} content={content}
+                         is_history={!is_relevant_years(content)}
+                         hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
+                         click={click}>
+                        {keyword}
+                    </Row>
+                ))}
         </ul>
     </section>
 );
 
-const Projs = ({hovered, clicked, subhovered, enter, leave, click}) => (
+const Projs = ({children, hovered, clicked, subhovered, enter, leave, click, filter}) => (
     <section>
-        <h2>Projects</h2>
+        <h2>{children}</h2>
         <ul className="tags">
-            {[...DATA_INDEXED.projects.entries()].map(([project, content]) => (
-                <Row key={project} index_key={`projects:${project}`} content={content}
-                     hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
-                     click={click}>
-                    {project}
-                </Row>
-            ))}
+            {[...DATA_INDEXED.projects.entries()].filter(([project, content]) => filter(project, content))
+                .map(([project, content]) => (
+                    <Row key={project} index_key={`projects:${project}`} content={content}
+                         is_history={!is_relevant_years(content)}
+                         hovered={hovered} clicked={clicked} subhovered={subhovered} enter={enter} leave={leave}
+                         click={click}>
+                        {project}
+                    </Row>
+                ))}
         </ul>
     </section>
 );

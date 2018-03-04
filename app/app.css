@@ -90,8 +90,16 @@ ul.tags li {
     cursor: default;
 }
 
+ul.tags li.history {
+    background-color: #EEEEEE;
+}
+
 ul.tags li:hover, ul.tags li.selected {
     background-color: #c0e3ff;
+}
+
+ul.tags li.history:hover, ul.tags li.history.selected {
+    background-color: #CCCCCC;
 }
 
 ul.tags li.clicked {
@@ -179,4 +187,9 @@ a.toggle.less {
         padding: 1rem 0 0 0;
         margin: 0 auto 0 auto;
     }
+}
+
+.past_divider {
+    border-top: dashed 1px red;
+    margin: 1em 0;
 }

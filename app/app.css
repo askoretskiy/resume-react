@@ -90,8 +90,16 @@ ul.tags li {
     cursor: default;
 }
 
-ul.tags li:hover {
+ul.tags li:hover, ul.tags li.selected {
     background-color: #c0e3ff;
+}
+
+ul.tags li.clicked {
+    background-color: #ff8080;
+}
+
+ul.tags li.clickable {
+    cursor: pointer;
 }
 
 div.tags-grouped {
